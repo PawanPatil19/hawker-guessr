@@ -3,9 +3,17 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 
 import { questionsForDay, runwayDays } from "./puzzle";
-import { toPublicRound } from "./repository/questions";
+import { playableImageQuestions, toPublicRound } from "./repository/questions";
 
 describe("image-only daily puzzle", () => {
+  it("has exactly 30 unique playable photos across 30 centres", () => {
+    const bank = playableImageQuestions();
+
+    expect(bank).toHaveLength(30);
+    expect(new Set(bank.map((question) => question.image)).size).toBe(30);
+    expect(new Set(bank.map((question) => question.centreId)).size).toBe(30);
+  });
+
   it("always returns five unique, attributed location photos", () => {
     for (const day of ["2026-08-01", "2026-08-08", "2026-09-01"]) {
       const questions = questionsForDay(day);
@@ -16,7 +24,9 @@ describe("image-only daily puzzle", () => {
         expect(question.image).toMatch(/^\/hawkers\/photo-\d{2}(?:-blurred)?\.jpg$/);
         expect(question.imageCredit).toBeTruthy();
         expect(question.imageSourceUrl).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
-        expect(question.imageLicense).toBe("CC BY-SA 4.0");
+        expect(["CC BY-SA 4.0", "CC BY 4.0", "CC BY 2.5"]).toContain(
+          question.imageLicense,
+        );
       }
     }
   });
@@ -30,8 +40,8 @@ describe("image-only daily puzzle", () => {
     expect(followingDay).not.toEqual(augustEighth);
   });
 
-  it("reports the current one-day content runway", () => {
-    expect(runwayDays()).toBe(1);
+  it("reports the current six-day content runway", () => {
+    expect(runwayDays()).toBe(6);
   });
 
   it("does not expose clues or photo provenance before the reveal", () => {

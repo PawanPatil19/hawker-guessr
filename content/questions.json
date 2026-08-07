@@ -40,7 +40,10 @@
     "id": "q-chinatown-01",
     "kind": "LOCATION",
     "centreId": "chinatown-complex",
-    "image": null,
+    "image": "/hawkers/photo-06.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chinatown_Complex_Market_and_Food_Centre,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "Over 200 cooked-food stalls — the biggest hawker centre in the country",
@@ -50,13 +53,16 @@
     "fact": "Largest hawker centre in Singapore. Hawker Chan's soya sauce chicken rice was the cheapest Michelin-starred meal in the world when it got its star.",
     "stall": "Hawker Chan",
     "difficulty": 1,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-tiong-bahru-01",
     "kind": "LOCATION",
     "centreId": "tiong-bahru-market",
-    "image": null,
+    "image": "/hawkers/photo-07-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tiong_Bahru_Market,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "Sits inside an art-deco estate of curved white walkways and spiral staircases",
@@ -65,13 +71,16 @@
     ],
     "fact": "The surrounding estate is Singapore's oldest public housing, built in the 1930s. The market was rebuilt in 2006 but kept its stallholders.",
     "difficulty": 2,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-changi-village-01",
     "kind": "LOCATION",
     "centreId": "changi-village-hawker-centre",
-    "image": null,
+    "image": "/hawkers/photo-08.jpg",
+    "imageCredit": "LN9267",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Changi_Village_Hawker_Centre_10-08-2025(1).jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Where are you standing?",
     "clues": [
       "The bus terminal outside is the end of the line — literally",
@@ -80,7 +89,7 @@
     ],
     "fact": "The nasi lemak stalls here run past midnight because the crowd is half supper crowd, half people who missed the last ferry.",
     "difficulty": 2,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-tekka-01",
@@ -104,7 +113,10 @@
     "id": "q-golden-mile-01",
     "kind": "LOCATION",
     "centreId": "golden-mile-food-centre",
-    "image": null,
+    "image": "/hawkers/photo-09.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Mile_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "A brutalist 1970s slab block on Beach Road, near the Thai supermarket strip",
@@ -113,7 +125,7 @@
     ],
     "fact": "Often confused with Golden Mile Complex next door. The food centre is a separate, older block.",
     "difficulty": 3,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-yishun-park-01",
@@ -149,7 +161,10 @@
     "id": "q-ghim-moh-01",
     "kind": "LOCATION",
     "centreId": "ghim-moh-market-and-food-centre",
-    "image": null,
+    "image": "/hawkers/photo-10-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ghim_Moh_market_and_food_centre_(40936).jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "Tucked behind an old HDB estate between Buona Vista and Holland Village",
@@ -158,7 +173,7 @@
     ],
     "fact": "The estate around it dates to the late 1970s. The market was upgraded in 2014 and most original stallholders returned.",
     "difficulty": 3,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-abc-brickworks-01",
@@ -179,7 +194,10 @@
     "id": "q-amoy-01",
     "kind": "LOCATION",
     "centreId": "amoy-street-food-centre",
-    "image": null,
+    "image": "/hawkers/photo-11-blurred.jpg",
+    "imageCredit": "Terence Ong",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Amoy_Street_Food_Centre.JPG",
+    "imageLicense": "CC BY 2.5",
     "prompt": "Which hawker centre?",
     "clues": [
       "Two floors, wedged among shophouses and office towers in the CBD",
@@ -188,7 +206,7 @@
     ],
     "fact": "Almost entirely a weekday operation. Many stalls simply don't open on Sundays because the offices around it are empty.",
     "difficulty": 2,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-bedok-85-01",
@@ -257,7 +275,10 @@
     "id": "q-adam-road-01",
     "kind": "LOCATION",
     "centreId": "adam-road-food-centre",
-    "image": null,
+    "image": "/hawkers/photo-12-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Adam_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "Small, roadside, beside a major expressway junction near the Botanic Gardens",
@@ -266,7 +287,7 @@
     ],
     "fact": "A small centre with an outsized reputation — the nasi lemak stall here has been running since the 1970s.",
     "difficulty": 3,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-lau-pa-sat-01",
@@ -290,7 +311,10 @@
     "id": "q-geylang-serai-01",
     "kind": "LOCATION",
     "centreId": "geylang-serai-market",
-    "image": null,
+    "image": "/hawkers/photo-13.jpg",
+    "imageCredit": "Chainwit.",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Geylang_Serai_Market_aka_Pasar_Geylang_Serai_(2025)_-_img_01.jpg",
+    "imageLicense": "CC BY 4.0",
     "prompt": "Which hawker centre?",
     "clues": [
       "Built to look like a Malay kampung village, timber-toned roofs",
@@ -299,7 +323,7 @@
     ],
     "fact": "Rebuilt in 2009 in a Malay village architectural style. The surrounding bazaar during Ramadan draws crowds from the whole island.",
     "difficulty": 2,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q-alexandra-village-01",
@@ -315,6 +339,312 @@
     "fact": "A low-rise 1970s centre that survived the estate's redevelopment around it.",
     "difficulty": 3,
     "verified": false
+  },
+  {
+    "id": "q-hong-lim-01",
+    "kind": "LOCATION",
+    "centreId": "hong-lim-market-and-food-centre",
+    "image": "/hawkers/photo-14-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hong_Lim_Market_and_Food_Centre,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A multi-storey complex beside Hong Lim Park",
+      "The Chinatown and CBD lunch crowds meet here",
+      "Famous queues form for curry noodles and char kway teow"
+    ],
+    "fact": "The food centre sits between Chinatown and the CBD, so its weekday lunch rush pulls in both office workers and long-time regulars.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-peoples-park-01",
+    "kind": "LOCATION",
+    "centreId": "people-s-park-food-centre",
+    "image": "/hawkers/photo-15-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:People%27s_Park_Food_Centre,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A giant name sign faces New Bridge Road",
+      "It sits at the foot of a landmark Chinatown complex",
+      "Chinese food stalls and produce shops share the ground level"
+    ],
+    "fact": "People's Park Complex was one of Singapore's early mixed-use megastructures, stacking shops, food and homes in one block.",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-berseh-01",
+    "kind": "LOCATION",
+    "centreId": "berseh-food-centre",
+    "image": "/hawkers/photo-16-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Berseh_Food_Centre,_external_view.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "At the corner of Jalan Besar and Kelantan Lane",
+      "A low tiled roof sits below newer city towers",
+      "Turtle soup is one of the old-school dishes associated with this place"
+    ],
+    "fact": "Berseh Food Centre is a low-rise holdout on the Jalan Besar edge, framed by shophouses and newer towers.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-north-bridge-01",
+    "kind": "LOCATION",
+    "centreId": "north-bridge-road-market-and-food-centre",
+    "image": "/hawkers/photo-17.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:North_Bridge_Road_Market,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A curved white roof with yellow panels",
+      "HDB blocks rise directly behind the car park",
+      "It is north of Kampong Glam along North Bridge Road"
+    ],
+    "fact": "Its long curved roof makes the centre unusually easy to pick out from the surrounding HDB blocks.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-whampoa-01",
+    "kind": "LOCATION",
+    "centreId": "whampoa-makan-place",
+    "image": "/hawkers/photo-18-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Whampoa_Makan_Place,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A glowing blue name sign crowns the entrance",
+      "It serves an older estate near Balestier",
+      "The market and night-food sections occupy neighbouring blocks"
+    ],
+    "fact": "Whampoa's market and cooked-food stalls are spread across neighbouring blocks, with different rhythms in the morning and at night.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-zion-riverside-01",
+    "kind": "LOCATION",
+    "centreId": "zion-riverside-food-centre",
+    "image": "/hawkers/photo-19-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zion_Riverside_Food_Centre,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A compact single-storey centre beside Alexandra Canal",
+      "Across the road from the Great World area",
+      "The green-and-red sign is partly hidden by a sheltered walkway"
+    ],
+    "fact": "The 'riverside' in its name is Alexandra Canal, which runs directly beside this compact food centre.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-dunman-01",
+    "kind": "LOCATION",
+    "centreId": "dunman-food-centre",
+    "image": "/hawkers/photo-20-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dunman_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A small two-storey centre in the Joo Chiat area",
+      "The facade is pale green with a wave-shaped roof",
+      "Its name is often linked with wanton mee and rojak"
+    ],
+    "fact": "Dunman is one of the smaller two-level food centres, tucked between the Joo Chiat and Katong neighbourhoods.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-haig-road-01",
+    "kind": "LOCATION",
+    "centreId": "haig-road-market-and-food-centre",
+    "image": "/hawkers/photo-21.jpg",
+    "imageCredit": "Orderinchaos",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Geylang_-_Haig_Road_Market_entrance.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A sculpted illuminated sign marks the entrance",
+      "Just across from the Geylang Serai district",
+      "Malay food and festive bazaars dominate the surrounding area"
+    ],
+    "fact": "Haig Road Market sits on the Joo Chiat side of Geylang Serai, placing two distinct food neighbourhoods within a short walk.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-bedok-interchange-01",
+    "kind": "LOCATION",
+    "centreId": "bedok-interchange-hawker-centre",
+    "image": "/hawkers/photo-22-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bedok_Interchange_Hawker_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A modern open-sided hall marked Block 208B",
+      "Directly connected to a major eastern bus interchange",
+      "The MRT station is only steps away"
+    ],
+    "fact": "This is the commuter hawker centre for Bedok: MRT, bus interchange and food are clustered in the same town-centre walk.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-havelock-road-01",
+    "kind": "LOCATION",
+    "centreId": "havelock-road-cooked-food-centre",
+    "image": "/hawkers/photo-23.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Havelock_Road_Cooked_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A low cooked-food centre sits beneath older Block 22",
+      "Newer high-rise flats loom immediately behind it",
+      "It is between Tiong Bahru and the Singapore River"
+    ],
+    "fact": "The centre's low roof and older flats now sit in sharp contrast with the much taller housing built around Havelock Road.",
+    "difficulty": 4,
+    "verified": true
+  },
+  {
+    "id": "q-holland-village-01",
+    "kind": "LOCATION",
+    "centreId": "holland-village-market-and-food-centre",
+    "image": "/hawkers/photo-24-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Holland_Village_Market_and_Food_Centre,_entrance.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A peaked red-brown roof faces Lorong Mambong",
+      "Bars and cafes fill the surrounding village strip",
+      "An MRT station is just across the road"
+    ],
+    "fact": "The hawker centre anchors Holland Village's daytime food scene before the surrounding Lorong Mambong bars take over at night.",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-redhill-01",
+    "kind": "LOCATION",
+    "centreId": "redhill-food-centre",
+    "image": "/hawkers/photo-25-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Redhill_Market_and_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "Red-and-white HDB blocks frame a low market roof",
+      "The neighbourhood's hill-and-swordfish story gives it its name",
+      "It sits along Redhill Close"
+    ],
+    "fact": "Redhill's name is tied to the Bukit Merah swordfish legend—one of Singapore's most repeated place-name stories.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-tampines-round-01",
+    "kind": "LOCATION",
+    "centreId": "tampines-round-market-and-food-centre",
+    "image": "/hawkers/photo-26.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tampines_Round_Market,_exterior_view.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A broad circular roof rises behind coconut palms",
+      "It predates much of the newer Tampines town centre",
+      "The round plan is right there in the everyday name"
+    ],
+    "fact": "The circular market form is so distinctive that residents usually shorten the official name to simply 'Round Market'.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-chong-pang-01",
+    "kind": "LOCATION",
+    "centreId": "chong-pang-market-and-food-centre",
+    "image": "/hawkers/photo-27-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chong_Pang_Market_and_Food_Centre,_interior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "An old-school interior with pink tiles and a high metal roof",
+      "A blue tray-return sign hangs above the aisle",
+      "This busy market serves the south end of Yishun"
+    ],
+    "fact": "Chong Pang is both a market and a neighbourhood identity; locals use the name for the whole cluster of shops around it.",
+    "difficulty": 4,
+    "verified": true
+  },
+  {
+    "id": "q-sembawang-hills-01",
+    "kind": "LOCATION",
+    "centreId": "sembawang-hills-food-centre",
+    "image": "/hawkers/photo-28.jpg",
+    "imageCredit": "BenTanXiaoMing",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sembawang_Hills_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A compact black-and-red frontage with a bright yellow sign",
+      "It is near Upper Thomson, not in Sembawang town",
+      "The surrounding estate is mostly landed homes"
+    ],
+    "fact": "Despite the name, Sembawang Hills Food Centre is near Upper Thomson—far south of today's Sembawang town centre.",
+    "difficulty": 3,
+    "verified": true
+  },
+  {
+    "id": "q-kovan-01",
+    "kind": "LOCATION",
+    "centreId": "kovan-market-and-food-centre",
+    "image": "/hawkers/photo-29-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kovan_Hougang_Market_and_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A red-brick interior under a large arched canopy",
+      "The official name includes both Kovan and Hougang",
+      "An MRT station and Heartland Mall sit beside it"
+    ],
+    "fact": "The official name bridges two identities—Kovan and Hougang—even though most regulars simply call it Kovan market.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-yuhua-village-01",
+    "kind": "LOCATION",
+    "centreId": "yuhua-village-market-and-food-centre",
+    "image": "/hawkers/photo-30-blurred.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yuhua_Village_Market_and_Food_Centre.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A bright interior with tall white trusses and pink roof panels",
+      "It serves the Yuhua estate in Jurong East",
+      "The market sits along Jurong East Avenue 1"
+    ],
+    "fact": "Yuhua Village is a heartland centre in Jurong East, several neighbourhood blocks away from the malls around the MRT station.",
+    "difficulty": 4,
+    "verified": true
   },
   {
     "id": "q-price-chicken-rice",
