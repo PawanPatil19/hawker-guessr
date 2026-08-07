@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -19,25 +19,38 @@ interface Props {
 export function RevealMap({ guess, truth }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibreMap | null>(null);
+  const [unavailable, setUnavailable] = useState(false);
 
   useEffect(() => {
     if (!container.current || map.current) return;
+
+    const canvas = document.createElement("canvas");
+    if (!(canvas.getContext("webgl2") || canvas.getContext("webgl"))) {
+      setUnavailable(true);
+      return;
+    }
 
     const bounds = new maplibregl.LngLatBounds(
       [Math.min(guess.lng, truth.lng), Math.min(guess.lat, truth.lat)],
       [Math.max(guess.lng, truth.lng), Math.max(guess.lat, truth.lat)],
     );
 
-    const instance = new maplibregl.Map({
-      container: container.current,
-      style: oneMapStyle("Grey"),
-      bounds,
-      fitBoundsOptions: { padding: 56, maxZoom: 15 },
-      minZoom: MIN_ZOOM,
-      maxZoom: MAX_ZOOM,
-      attributionControl: { compact: true },
-      interactive: true,
-    });
+    let instance: MapLibreMap;
+    try {
+      instance = new maplibregl.Map({
+        container: container.current,
+        style: oneMapStyle("Grey"),
+        bounds,
+        fitBoundsOptions: { padding: 56, maxZoom: 15 },
+        minZoom: MIN_ZOOM,
+        maxZoom: MAX_ZOOM,
+        attributionControl: { compact: true },
+        interactive: true,
+      });
+    } catch {
+      setUnavailable(true);
+      return;
+    }
 
     instance.on("error", (e) => console.error("[map]", e.error?.message ?? e));
     instance.on("load", () => {
@@ -84,6 +97,16 @@ export function RevealMap({ guess, truth }: Props) {
       map.current = null;
     };
   }, [guess, truth]);
+
+  if (unavailable) {
+    return (
+      <div className="map map--reveal map--reveal-fallback" role="img" aria-label="Reveal map unavailable">
+        <span><i className="pin pin--guess" /> Your guess</span>
+        <span aria-hidden>··········</span>
+        <span><i className="pin pin--truth" /> Answer</span>
+      </div>
+    );
+  }
 
   return (
     <div className="map map--reveal">

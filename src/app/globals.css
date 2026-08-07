@@ -152,6 +152,13 @@ button, input { font: inherit; }
 .map__reticle::before { left: 9px; top: -7px; width: 2px; height: 32px; }
 .map__reticle::after { left: -7px; top: 9px; width: 32px; height: 2px; }
 .map--fallback { display: grid; align-content: center; gap: 18px; padding: 22px; background: var(--paper); }
+.map--reveal-fallback {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 24px; background: var(--paper); color: var(--muted);
+  font-family: var(--mono); font-size: 11px;
+}
+.map--reveal-fallback span { display: flex; align-items: center; gap: 7px; }
+.map--reveal-fallback .pin { display: inline-block; flex: none; cursor: default; }
 .map__fallback-title { max-width: 26ch; margin: 0 auto; text-align: center; font-family: var(--display); font-size: 22px; }
 .map__fallback-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .map__fallback-grid button {
@@ -244,6 +251,7 @@ button, input { font: inherit; }
   .clue, .map { border-radius: 18px; }
   .clue__photo { height: clamp(270px, 42svh, 360px); }
   .map { height: clamp(300px, 42svh, 360px); }
+  .map--reveal-fallback { height: 170px; min-height: 170px; }
   .guess-layout { gap: 14px; }
   .reveal__body { padding-top: 22px; }
   .score__rounds li { grid-template-columns: 22px minmax(0,1fr) auto auto; gap: 6px; }
