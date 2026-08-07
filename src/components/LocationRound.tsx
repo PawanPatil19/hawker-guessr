@@ -42,7 +42,9 @@ export function LocationRound({ disabled, error, onSubmit }: Props) {
           <p className="hint status--error" role="alert">{error} Try again.</p>
         ) : (
           <p className="hint">
-            {pending ? "Move the pin, or lock it in." : "Tap the map to drop your pin."}
+            {pending
+              ? "Move the pin, or lock it in. Zoom closer for a sharper score."
+              : "Tap the map, or use arrows and Enter. Zoom closer for a sharper score."}
           </p>
         )}
       </div>

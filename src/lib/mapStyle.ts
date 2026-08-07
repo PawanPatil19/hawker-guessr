@@ -35,7 +35,7 @@ export const MAX_BOUNDS: [[number, number], [number, number]] = [
 ];
 
 /** Whole island in view on a phone-width map. */
-export const ISLAND_ZOOM = 10.6;
+export const ISLAND_ZOOM = 11;
 
 export const MIN_ZOOM = 10.2;
 export const MAX_ZOOM = 17;

@@ -6,7 +6,7 @@
   --pandan: #526650;
   --kaya: #c69a4d;
   --line: #cfc3ae;
-  --muted: #746b5e;
+  --muted: #655c50;
   --shadow: 0 20px 50px rgba(62, 48, 30, 0.12);
 }
 
@@ -127,12 +127,29 @@ button, input { font: inherit; }
   position: relative; height: clamp(315px, 43svh, 410px); overflow: hidden;
   border-radius: 22px; background: var(--line); box-shadow: var(--shadow);
 }
+.map:focus-visible { outline: 3px solid var(--kaya); outline-offset: 3px; }
 .map--reveal { height: clamp(260px, 38svh, 360px); }
 .map__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .map__loading {
   position: absolute; inset: 0; display: grid; place-items: center; background: var(--tile);
   color: var(--muted); font-family: var(--mono); font-size: 12px; pointer-events: none;
 }
+.map__reticle {
+  position: absolute; left: 50%; top: 50%; z-index: 2; width: 22px; height: 22px;
+  border: 2px solid var(--chilli); border-radius: 50%; transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px rgba(248,243,233,.9); pointer-events: none;
+}
+.map__reticle::before, .map__reticle::after { content: ""; position: absolute; background: var(--chilli); }
+.map__reticle::before { left: 9px; top: -7px; width: 2px; height: 32px; }
+.map__reticle::after { left: -7px; top: 9px; width: 32px; height: 2px; }
+.map--fallback { display: grid; align-content: center; gap: 18px; padding: 22px; background: var(--paper); }
+.map__fallback-title { max-width: 26ch; margin: 0 auto; text-align: center; font-family: var(--display); font-size: 22px; }
+.map__fallback-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.map__fallback-grid button {
+  min-height: 58px; padding: 8px 4px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--tile); color: var(--ink); font-size: 12px; cursor: pointer;
+}
+.map__fallback-grid button:focus-visible { outline: 3px solid var(--kaya); outline-offset: 1px; }
 .pin { width: 16px; height: 16px; border: 2px solid var(--ink); cursor: pointer; }
 .pin--guess { background: var(--chilli); }
 .pin--truth { border-radius: 50%; background: var(--pandan); }
@@ -140,7 +157,7 @@ button, input { font: inherit; }
 .maplibregl-ctrl-attrib { font-size: 10px; }
 
 /* controls */
-.round-controls { position: relative; z-index: 3; margin: -32px 14px 0; }
+.round-controls { position: relative; z-index: 3; margin: 12px 14px 0; }
 .btn {
   display: block; width: 100%; min-height: 52px; margin-top: 10px; padding: 13px 22px;
   border: 1px solid var(--chilli); border-radius: 999px; background: var(--chilli); color: #fff;
