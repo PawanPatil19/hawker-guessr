@@ -1,0 +1,469 @@
+[
+  {
+    "id": "q-maxwell-01",
+    "kind": "LOCATION",
+    "centreId": "maxwell-food-centre",
+    "image": "/hawkers/photo-01-blurred.jpg",
+    "imageCredit": "Bahnfrend",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maxwell_Food_Centre,_2024_(11).jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "A 1928 wet market turned food centre, opposite a Buddhist temple with a tooth relic",
+      "The chicken rice queue here has its own tourist signage",
+      "Green-painted steel trusses, no air-con, packed at 12.30pm sharp"
+    ],
+    "fact": "Opened in 1928 as Maxwell Market. Tian Tian's queue got so famous the stall next door renamed itself to catch the overflow.",
+    "stall": "Tian Tian Hainanese Chicken Rice",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-old-airport-01",
+    "kind": "LOCATION",
+    "centreId": "old-airport-road-food-centre",
+    "image": "/hawkers/photo-02.jpg",
+    "imageCredit": "Kbseah",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:51_Old_Airport_Road_Food_Centre,_exterior.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "168 stalls under one roof — one of the largest in Singapore",
+      "Named after the runway that used to be next door",
+      "Lor mee, rojak and Hokkien mee stalls that all opened before 1980"
+    ],
+    "fact": "Built 1973 beside the old Kallang Airport. Locals still argue whether the lor mee or the Hokkien mee is the reason to queue.",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-chinatown-01",
+    "kind": "LOCATION",
+    "centreId": "chinatown-complex",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Over 200 cooked-food stalls — the biggest hawker centre in the country",
+      "You go up an escalator past a wet market to reach the food",
+      "A soya sauce chicken stall here got a Michelin star in 2016"
+    ],
+    "fact": "Largest hawker centre in Singapore. Hawker Chan's soya sauce chicken rice was the cheapest Michelin-starred meal in the world when it got its star.",
+    "stall": "Hawker Chan",
+    "difficulty": 1,
+    "verified": false
+  },
+  {
+    "id": "q-tiong-bahru-01",
+    "kind": "LOCATION",
+    "centreId": "tiong-bahru-market",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Sits inside an art-deco estate of curved white walkways and spiral staircases",
+      "Rebuilt in 2006, two storeys, wet market below",
+      "Chwee kueh and lor mee are the reasons people cross the island"
+    ],
+    "fact": "The surrounding estate is Singapore's oldest public housing, built in the 1930s. The market was rebuilt in 2006 but kept its stallholders.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-changi-village-01",
+    "kind": "LOCATION",
+    "centreId": "changi-village-hawker-centre",
+    "image": null,
+    "prompt": "Where are you standing?",
+    "clues": [
+      "The bus terminal outside is the end of the line — literally",
+      "A ferry point to Pulau Ubin is a two-minute walk away",
+      "Famous for nasi lemak stalls that open until 3am"
+    ],
+    "fact": "The nasi lemak stalls here run past midnight because the crowd is half supper crowd, half people who missed the last ferry.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-tekka-01",
+    "kind": "LOCATION",
+    "centreId": "tekka-centre",
+    "image": "/hawkers/photo-05-blurred.jpg",
+    "imageCredit": "LN9267",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tekka_Center_11-11-2023(1).jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "Wet market, hawker centre and sari shops stacked in one building",
+      "Directly across the road from an MRT station on the North East and Downtown lines",
+      "Biryani, murtabak and Indian rojak within three stalls of each other"
+    ],
+    "fact": "The name comes from 'tek kia kha' — Hokkien for 'foot of the small bamboos'. Rebuilt in 1980 and again in 2009.",
+    "difficulty": 2,
+    "verified": true
+  },
+  {
+    "id": "q-golden-mile-01",
+    "kind": "LOCATION",
+    "centreId": "golden-mile-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "A brutalist 1970s slab block on Beach Road, near the Thai supermarket strip",
+      "Known for a beef kway teow stall and a fried carrot cake stall on the same floor",
+      "Not the same building as the one everyone calls 'Little Thailand'"
+    ],
+    "fact": "Often confused with Golden Mile Complex next door. The food centre is a separate, older block.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-yishun-park-01",
+    "kind": "LOCATION",
+    "centreId": "yishun-park-hawker-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Opened 2017, sits inside a park, no walls on two sides",
+      "Run by a social enterprise operator, not NEA directly",
+      "Tray return here is actually enforced"
+    ],
+    "fact": "One of the 'new generation' hawker centres built after 2015, when the government restarted hawker centre construction after a 30-year pause.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-kampung-admiralty-01",
+    "kind": "LOCATION",
+    "centreId": "kampung-admiralty-hawker-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Sits under a block that also holds a polyclinic, a childcare centre and flats for seniors",
+      "Won a World Building of the Year award in 2018",
+      "Rooftop community farm above you"
+    ],
+    "fact": "The whole development won World Building of the Year 2018 — a hawker centre, medical centre, childcare and elderly housing stacked vertically.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-ghim-moh-01",
+    "kind": "LOCATION",
+    "centreId": "ghim-moh-market-and-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Tucked behind an old HDB estate between Buona Vista and Holland Village",
+      "The chwee kueh stall has a queue before 8am",
+      "Rebuilt around 2014, red-brick surroundings, low-rise blocks"
+    ],
+    "fact": "The estate around it dates to the late 1970s. The market was upgraded in 2014 and most original stallholders returned.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-abc-brickworks-01",
+    "kind": "LOCATION",
+    "centreId": "abc-brickworks-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Named after a brickworks that used to operate on the site",
+      "Off Jalan Bukit Merah, ringed by 1970s point blocks",
+      "The Hokkien mee and the char kway teow both have followings"
+    ],
+    "fact": "ABC stands for Alexandra Brickworks Company. The kilns are long gone; the name stuck.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-amoy-01",
+    "kind": "LOCATION",
+    "centreId": "amoy-street-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Two floors, wedged among shophouses and office towers in the CBD",
+      "Dies completely on weekends — it feeds the lunch crowd",
+      "A hand-made fishball noodle stall here sells out by 1pm"
+    ],
+    "fact": "Almost entirely a weekday operation. Many stalls simply don't open on Sundays because the offices around it are empty.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-bedok-85-01",
+    "kind": "LOCATION",
+    "centreId": "fengshan-market-and-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Everyone calls it by a block number, not its official name",
+      "The bak chor mee queue starts after 8pm",
+      "Bedok North, and it's busiest close to midnight"
+    ],
+    "fact": "Officially Fengshan Market and Food Centre — but nobody calls it that. To the whole island it is 'Bedok 85'.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-hougang-105-01",
+    "kind": "LOCATION",
+    "centreId": "hougang-105-hainanese-village-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "The word 'Hainanese' is in its official name",
+      "Named for the village that stood here before the HDB blocks",
+      "Hougang, and the block number is in the name everyone uses"
+    ],
+    "fact": "Named after the Hainanese village that occupied this stretch of Hougang before redevelopment.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-serangoon-garden-01",
+    "kind": "LOCATION",
+    "centreId": "serangoon-garden-market-and-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Sits in a landed estate the British laid out in the 1950s",
+      "Surrounded by a shopping street locals call 'the circus'",
+      "No MRT within walking distance, which keeps the crowd local"
+    ],
+    "fact": "The estate was built in the 1950s for British servicemen. The roundabout beside it is still called Serangoon Garden Circus.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-newton-01",
+    "kind": "LOCATION",
+    "centreId": "newton-food-centre",
+    "image": "/hawkers/photo-03-blurred.jpg",
+    "imageCredit": "LN9267",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Newton_Food_Centre_06-08-2025(1).jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "Open-air, ringed by tall trees, right beside an MRT interchange",
+      "Appeared in a 2018 Hollywood film about a wedding",
+      "Satay and BBQ stingray stalls that will absolutely try to upsell you"
+    ],
+    "fact": "Featured in Crazy Rich Asians (2018). Local reaction was mixed — plenty of Singaporeans thought the film should have picked a less touristy centre.",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-adam-road-01",
+    "kind": "LOCATION",
+    "centreId": "adam-road-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Small, roadside, beside a major expressway junction near the Botanic Gardens",
+      "Best known for nasi lemak and a long-running mee rebus stall",
+      "Mostly halal stalls, open late"
+    ],
+    "fact": "A small centre with an outsized reputation — the nasi lemak stall here has been running since the 1970s.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-lau-pa-sat-01",
+    "kind": "LOCATION",
+    "centreId": "lau-pa-sat",
+    "image": "/hawkers/photo-04.jpg",
+    "imageCredit": "GoAheadFan95",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lau_Pa_Sat_(Former_Telok_Ayer_Market),_October_2024.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "prompt": "Which hawker centre is this?",
+    "clues": [
+      "Victorian cast-iron octagon, shipped in from Glasgow in 1894",
+      "A national monument that still sells food",
+      "The satay street outside only opens after 7pm, when the road closes"
+    ],
+    "fact": "The cast-iron structure was prefabricated in Glasgow and shipped to Singapore in 1894. Gazetted a national monument in 1973.",
+    "difficulty": 1,
+    "verified": true
+  },
+  {
+    "id": "q-geylang-serai-01",
+    "kind": "LOCATION",
+    "centreId": "geylang-serai-market",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Built to look like a Malay kampung village, timber-toned roofs",
+      "The wet market below is the busiest of its kind in Singapore",
+      "Goes completely mad during Ramadan"
+    ],
+    "fact": "Rebuilt in 2009 in a Malay village architectural style. The surrounding bazaar during Ramadan draws crowds from the whole island.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-alexandra-village-01",
+    "kind": "LOCATION",
+    "centreId": "alexandra-village-food-centre",
+    "image": null,
+    "prompt": "Which hawker centre?",
+    "clues": [
+      "Single-storey, low roof, beside a row of car workshops and a park connector",
+      "The Hainanese curry rice and the char siew stalls both draw queues",
+      "Nearest MRT is Redhill, but it's a real walk"
+    ],
+    "fact": "A low-rise 1970s centre that survived the estate's redevelopment around it.",
+    "difficulty": 3,
+    "verified": false
+  },
+  {
+    "id": "q-price-chicken-rice",
+    "kind": "PRICE",
+    "centreId": "maxwell-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "One plate steamed chicken rice, no drink",
+    "clues": ["Famous stall", "Central, tourist-heavy hawker centre", "Cash and PayNow only"],
+    "answerPriceCents": 600,
+    "priceFloorCents": 200,
+    "priceCeilCents": 1500,
+    "fact": "Tourist-facing stalls in the CBD have drifted well above the heartland price for the same plate.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-cai-png",
+    "kind": "PRICE",
+    "centreId": "hong-lim-market-and-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Cai png — 2 meat, 1 vegetable",
+    "clues": ["CBD lunch crowd", "No prices displayed on the tray rack", "You did not ask before pointing"],
+    "answerPriceCents": 720,
+    "priceFloorCents": 300,
+    "priceCeilCents": 1500,
+    "fact": "The great national grievance: cai png stalls rarely display prices, and the same three dishes vary by more than $3 across the island.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-kopi",
+    "kind": "PRICE",
+    "centreId": "toa-payoh-lorong-8-market-and-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "One kopi-o, heartland coffee stall",
+    "clues": ["Heartland, not CBD", "Uncle has run this stall for 30 years", "Served in a glass, not a cup"],
+    "answerPriceCents": 150,
+    "priceFloorCents": 60,
+    "priceCeilCents": 500,
+    "fact": "The kopi price is Singapore's unofficial inflation index — it moves maybe 10 cents a year, and everyone notices when it does.",
+    "difficulty": 1,
+    "verified": false
+  },
+  {
+    "id": "q-price-char-kway-teow",
+    "kind": "PRICE",
+    "centreId": "old-airport-road-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Small plate char kway teow, with cockles",
+    "clues": ["Long-standing stall, 40-minute queue", "East side", "Cash only, uncle cooks one plate at a time"],
+    "answerPriceCents": 600,
+    "priceFloorCents": 250,
+    "priceCeilCents": 1500,
+    "fact": "Cockles are the swing factor — plenty of stalls now charge extra for them, or leave them out unless you ask.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-roti-prata",
+    "kind": "PRICE",
+    "centreId": "tekka-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "One plain prata",
+    "clues": ["Little India", "Served with fish curry, no extra charge", "Open from 6am"],
+    "answerPriceCents": 150,
+    "priceFloorCents": 60,
+    "priceCeilCents": 600,
+    "fact": "Plain prata is one of the last items still under $2 at most stalls — the egg prata is where the margin lives.",
+    "difficulty": 1,
+    "verified": false
+  },
+  {
+    "id": "q-price-hokkien-mee",
+    "kind": "PRICE",
+    "centreId": "abc-brickworks-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Small plate Hokkien mee",
+    "clues": ["Bukit Merah", "Cooked over charcoal", "Comes with sambal and a wedge of lime"],
+    "answerPriceCents": 550,
+    "priceFloorCents": 250,
+    "priceCeilCents": 1500,
+    "fact": "Charcoal-fired Hokkien mee stalls are getting rare — most have switched to gas, which regulars insist they can taste.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-nasi-lemak",
+    "kind": "PRICE",
+    "centreId": "changi-village-hawker-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Nasi lemak with chicken wing and egg",
+    "clues": ["Far east, near the ferry terminal", "Queue at 11pm", "Wrapped in paper, not styrofoam"],
+    "answerPriceCents": 550,
+    "priceFloorCents": 250,
+    "priceCeilCents": 1500,
+    "fact": "The late-night crowd here is a mix of supper-seekers and people who missed the last ferry to Pulau Ubin.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-fishball-noodle",
+    "kind": "PRICE",
+    "centreId": "amoy-street-food-centre",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Dry mee pok with handmade fishballs",
+    "clues": ["CBD, weekday-only stall", "Sells out before 1pm", "Fishballs made that morning"],
+    "answerPriceCents": 700,
+    "priceFloorCents": 300,
+    "priceCeilCents": 1500,
+    "fact": "Handmade fishball stalls charge a premium and sell out early — the CBD lunch hour does the rest.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-satay",
+    "kind": "PRICE",
+    "centreId": "lau-pa-sat",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "Ten sticks of chicken satay",
+    "clues": ["Street closes at 7pm for the stalls", "CBD, heavily touristed", "Minimum order is ten sticks"],
+    "answerPriceCents": 1000,
+    "priceFloorCents": 400,
+    "priceCeilCents": 2500,
+    "fact": "Satay Street operates only in the evening, when Boon Tat Street closes to traffic and the grills come out.",
+    "difficulty": 2,
+    "verified": false
+  },
+  {
+    "id": "q-price-teh-tarik",
+    "kind": "PRICE",
+    "centreId": "geylang-serai-market",
+    "image": null,
+    "prompt": "How much, 2026?",
+    "item": "One teh tarik",
+    "clues": ["Geylang Serai", "Pulled from a height, twice", "Served hot in a glass"],
+    "answerPriceCents": 180,
+    "priceFloorCents": 80,
+    "priceCeilCents": 600,
+    "fact": "'Tarik' means pulled — the aeration is the whole point, and stalls that skip it get quietly abandoned by regulars.",
+    "difficulty": 1,
+    "verified": false
+  }
+]

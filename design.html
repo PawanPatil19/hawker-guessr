@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hawker Guessr — Design Direction</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;700&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tile:#F4F1E8; --ink:#1A1714; --chilli:#D6202B; --kopi:#6B4423;
+  --pandan:#2E7D4F; --kaya:#F2B705; --line:#D8D2C2; --muted:#6E675C;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --tile:#171412; --ink:#F4F1E8; --chilli:#FF3B45; --line:#3A342D; --muted:#9B9285; --kopi:#C08B5C; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--tile); color:var(--ink);
+  font-family:Inter,system-ui,sans-serif; line-height:1.55;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:44px 44px; background-position:-1px -1px;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 20px 96px}
+h1,h2,h3,.disp{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
+h1{font-size:clamp(38px,7vw,72px);font-weight:700}
+h2{font-size:26px;font-weight:700;margin:56px 0 6px;padding-top:20px;border-top:2px solid var(--ink)}
+.sub{color:var(--muted);font-size:15px;margin-bottom:26px}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  border:1.5px solid var(--ink);padding:3px 9px;background:var(--tile)}
+.lede{max-width:60ch;font-size:17px;margin-top:14px}
+
+/* palette */
+.pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;border:2px solid var(--ink)}
+.sw{padding:14px 12px;border-right:2px solid var(--ink);min-height:104px;display:flex;flex-direction:column;justify-content:flex-end}
+.sw:last-child{border-right:0}
+.sw b{font-family:'IBM Plex Mono',monospace;font-size:12px;display:block}
+.sw span{font-size:11px;opacity:.75}
+
+/* phone frames */
+.rail{display:flex;gap:26px;overflow-x:auto;padding:6px 2px 22px}
+.phone{flex:0 0 300px;border:2px solid var(--ink);background:var(--tile);position:relative}
+.phone .cap{position:absolute;top:-13px;left:10px;background:var(--chilli);color:#fff;font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.12em;padding:3px 8px;text-transform:uppercase}
+.scr{padding:14px}
+.bar{display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+
+/* stall number tiles — the signature motif */
+.tiles{display:flex;gap:5px}
+.tl{width:26px;height:26px;border:2px solid var(--ink);display:grid;place-items:center;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;background:var(--tile)}
+.tl.done{background:var(--chilli);color:#fff;border-color:var(--chilli)}
+.tl.now{background:var(--kaya);color:#1A1714;border-color:var(--ink)}
+
+.photo{height:168px;border:2px solid var(--ink);position:relative;overflow:hidden;
+  background:
+    repeating-linear-gradient(115deg,rgba(0,0,0,.05) 0 12px,transparent 12px 24px),
+    linear-gradient(160deg,#C9A227,#8E5A2B 45%,#5E3A1E);}
+.photo.int{background:repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 18px,transparent 18px 36px),linear-gradient(180deg,#7F8B93,#3F4B54)}
+.photo .qz{position:absolute;bottom:8px;left:8px;background:var(--tile);border:2px solid var(--ink);
+  font-family:Oswald,sans-serif;text-transform:uppercase;font-size:13px;padding:3px 8px}
+.map{height:150px;border:2px solid var(--ink);margin-top:10px;position:relative;
+  background:linear-gradient(180deg,#DCE6DA,#C3D3C6)}
+@media (prefers-color-scheme: dark){ .map{background:linear-gradient(180deg,#26302B,#1B231E)} }
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.btn{display:block;width:100%;text-align:center;background:var(--chilli);color:#fff;border:2px solid var(--chilli);
+  font-family:Oswald,sans-serif;text-transform:uppercase;font-size:16px;padding:11px;margin-top:10px;letter-spacing:.02em}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+
+.reveal{border:2px solid var(--ink);margin-top:10px;padding:11px}
+.reveal .big{font-family:Oswald,sans-serif;font-size:30px;text-transform:uppercase}
+.reveal .row{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;
+  border-top:1px solid var(--line);padding-top:7px;margin-top:7px}
+.fact{border-left:4px solid var(--kaya);padding-left:9px;font-size:12.5px;margin-top:10px;color:var(--muted)}
+
+.score{font-family:Oswald,sans-serif;font-size:60px;line-height:1;font-variant-numeric:tabular-nums}
+.rowline{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:7px 0;font-size:13px}
+.rowline .mono{font-size:13px}
+.dotbar{display:flex;gap:3px}
+.d{width:13px;height:13px;border:1.5px solid var(--ink)}
+.d.g{background:var(--pandan);border-color:var(--pandan)}
+.d.y{background:var(--kaya);border-color:var(--kaya)}
+.d.r{background:var(--chilli);border-color:var(--chilli)}
+
+.sharecard{border:2px solid var(--ink);padding:14px;margin-top:10px;background:var(--tile)}
+.grid5{display:flex;gap:5px;margin:9px 0}
+.g5{width:30px;height:30px;border:2px solid var(--ink)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-top:12px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:var(--ink);color:var(--tile);font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase}
+.vo{border:2px solid var(--ink);padding:14px;margin-top:12px}
+.vo p{margin:7px 0;font-size:14.5px}
+.vo b{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block}
+.note{font-size:13.5px;color:var(--muted);max-width:62ch;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="tag">Design direction v1 · 2026-08-07</span>
+<h1>Hawker<br>Guessr 🇸🇬</h1>
+<p class="lede">One photo. One pin. Five rounds. Every morning at 6am.<br>
+The look is not "food app" — it is <b>hawker centre signage</b>: enamel plates, stall-number tiles, terrazzo, dot-matrix price boards.</p>
+
+<h2>Palette</h2>
+<p class="sub">Flat, printed, high contrast. Dark mode is the same structure at night-market temperature.</p>
+<div class="pal">
+  <div class="sw" style="background:#F4F1E8;color:#1A1714"><b>--tile #F4F1E8</b><span>Background</span></div>
+  <div class="sw" style="background:#1A1714;color:#F4F1E8"><b>--ink #1A1714</b><span>Text, borders</span></div>
+  <div class="sw" style="background:#D6202B;color:#fff"><b>--chilli #D6202B</b><span>Primary / brand</span></div>
+  <div class="sw" style="background:#6B4423;color:#fff"><b>--kopi #6B4423</b><span>Secondary</span></div>
+  <div class="sw" style="background:#2E7D4F;color:#fff"><b>--pandan #2E7D4F</b><span>Nailed it</span></div>
+  <div class="sw" style="background:#F2B705;color:#1A1714"><b>--kaya #F2B705</b><span>Streak / current</span></div>
+</div>
+<p class="note">Type: <b>Oswald</b> (condensed, uppercase) for display — reads as signboard. <b>Inter</b> for body, must sit beside Chinese stall names without looking broken. <b>IBM Plex Mono</b> tabular figures for every number: scores, distances, prices, countdowns.</p>
+
+<h2>The five screens</h2>
+<p class="sub">Round → guess → reveal → card → share. Nothing else exists in v1.</p>
+
+<div class="rail">
+
+  <!-- 1 GUESS -->
+  <div class="phone"><span class="cap">01 · Guess</span><div class="scr">
+    <div class="bar"><span>Hawker #142</span><span>🔥 17</span></div>
+    <div class="tiles" style="margin-bottom:10px">
+      <div class="tl done">01</div><div class="tl done">02</div><div class="tl now">03</div><div class="tl">04</div><div class="tl">05</div>
+    </div>
+    <div class="photo int"><span class="qz">Which hawker centre?</span></div>
+    <div class="map">
+      <svg viewBox="0 0 300 150"><path d="M28 96 C52 58,104 42,152 48 C198 54,246 62,272 84 C258 108,206 122,150 118 C96 114,52 112,28 96 Z"
+        fill="none" stroke="#1A1714" stroke-width="1.6" opacity=".55"/>
+        <circle cx="186" cy="79" r="6" fill="#D6202B" stroke="#1A1714" stroke-width="2"/>
+        <text x="196" y="83" font-family="IBM Plex Mono" font-size="9" fill="#1A1714">your pin</text>
+      </svg>
+    </div>
+    <div class="btn">Lock in guess</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);text-align:center;margin-top:7px">
+      No timer. No login. Just guess.</div>
+  </div></div>
+
+  <!-- 2 REVEAL -->
+  <div class="phone"><span class="cap">02 · Reveal</span><div class="scr">
+    <div class="bar"><span>Round 03</span><span class="mono">+ 635</span></div>
+    <div class="map" style="height:132px;margin-top:0">
+      <svg viewBox="0 0 300 132"><path d="M28 86 C52 50,104 36,152 42 C198 48,246 54,272 74 C258 96,206 108,150 104 C96 100,52 100,28 86 Z"
+        fill="none" stroke="#1A1714" stroke-width="1.6" opacity=".55"/>
+        <line x1="186" y1="70" x2="132" y2="60" stroke="#D6202B" stroke-width="2" stroke-dasharray="4 3"/>
+        <circle cx="186" cy="70" r="5" fill="none" stroke="#1A1714" stroke-width="2"/>
+        <circle cx="132" cy="60" r="6" fill="#2E7D4F" stroke="#1A1714" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="reveal">
+      <div class="big">Old Airport Rd<br>Food Centre</div>
+      <div class="row"><span>You were off by</span><span><b>1.04 km</b></span></div>
+      <div class="row"><span>Points</span><span><b>635 / 1000</b></span></div>
+      <div class="fact">Built 1973. One of SG's oldest surviving hawker centres — 168 stalls, and the queue at Lao Fu Zi starts at 10.30am.</div>
+    </div>
+    <div class="btn">Next round →</div>
+  </div></div>
+
+  <!-- 3 PRICE -->
+  <div class="phone"><span class="cap">03 · Price round</span><div class="scr">
+    <div class="bar"><span>Round 04</span><span>💰 Price</span></div>
+    <div class="photo"><span class="qz">How much, 2026?</span></div>
+    <div style="border:2px solid var(--ink);margin-top:10px;padding:11px">
+      <div style="font-family:Oswald,sans-serif;font-size:19px;text-transform:uppercase">Cai png · 2 meat 1 veg</div>
+      <div style="font-size:12.5px;color:var(--muted)">Tanjong Pagar Plaza Market</div>
+      <div class="mono" style="font-size:44px;text-align:center;margin:14px 0 6px">$5.20</div>
+      <div style="height:5px;background:var(--line);position:relative">
+        <div style="position:absolute;left:47%;top:-7px;width:5px;height:19px;background:var(--chilli)"></div>
+      </div>
+      <div class="mono" style="display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-top:6px">
+        <span>$2.00</span><span>$15.00</span></div>
+    </div>
+    <div class="btn">Confirm price</div>
+    <div class="note" style="font-size:11.5px;text-align:center">Cheapest content to make. Loudest content to share.</div>
+  </div></div>
+
+  <!-- 4 SCORECARD -->
+  <div class="phone"><span class="cap">04 · Score card</span><div class="scr">
+    <div class="bar"><span>Hawker #142</span><span>Done</span></div>
+    <div class="score">3,847</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:12px">
+      Beat 82% of Singapore today</div>
+    <div class="rowline"><span>01 · Tian Tian</span><span class="mono">982</span></div>
+    <div class="rowline"><span>02 · Ban mee</span><span class="mono">640</span></div>
+    <div class="rowline"><span>03 · Old Airport</span><span class="mono">635</span></div>
+    <div class="rowline"><span>04 · Cai png $</span><span class="mono">890</span></div>
+    <div class="rowline"><span>05 · Exterior</span><span class="mono">700</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+      <div><div style="font-family:Oswald,sans-serif;font-size:30px">18</div>
+        <div style="font-size:10.5px;color:var(--muted);letter-spacing:.1em">DAY STREAK 🔥</div></div>
+      <div class="dotbar"><span class="d g"></span><span class="d y"></span><span class="d y"></span><span class="d g"></span><span class="d y"></span></div>
+    </div>
+    <div class="btn">Share result</div>
+    <div class="btn ghost">Next hawker in 14:22:07</div>
+  </div></div>
+
+  <!-- 5 MAP -->
+  <div class="phone"><span class="cap">05 · Your hawker map</span><div class="scr">
+    <div class="bar"><span>Pawan</span><span>Hawker map</span></div>
+    <div class="map" style="height:158px;margin-top:0">
+      <svg viewBox="0 0 300 158"><path d="M26 100 C50 60,104 44,154 50 C200 56,248 64,274 86 C260 112,206 128,150 124 C96 120,50 116,26 100 Z"
+        fill="none" stroke="#1A1714" stroke-width="1.6" opacity=".5"/>
+        <g>
+          <circle cx="212" cy="80" r="4.5" fill="#F2B705" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="228" cy="92" r="4.5" fill="#F2B705" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="196" cy="94" r="4.5" fill="#2E7D4F" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="240" cy="76" r="4.5" fill="#2E7D4F" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="176" cy="76" r="4.5" fill="#2E7D4F" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="152" cy="88" r="4.5" fill="#2E7D4F" stroke="#1A1714" stroke-width="1.4"/>
+          <circle cx="140" cy="70" r="4.5" fill="none" stroke="#1A1714" stroke-width="1.6"/>
+          <circle cx="120" cy="84" r="4.5" fill="none" stroke="#1A1714" stroke-width="1.6"/>
+          <circle cx="100" cy="72" r="4" fill="#D8D2C2" stroke="#9B9285" stroke-width="1.2"/>
+          <circle cx="76" cy="88" r="4" fill="#D8D2C2" stroke="#9B9285" stroke-width="1.2"/>
+          <circle cx="58" cy="98" r="4" fill="#D8D2C2" stroke="#9B9285" stroke-width="1.2"/>
+          <circle cx="160" cy="62" r="4" fill="#D8D2C2" stroke="#9B9285" stroke-width="1.2"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;justify-content:space-between;text-align:center;border:2px solid var(--ink);border-top:0;padding:11px 6px">
+      <div><div class="mono" style="font-size:21px;font-weight:700">38/121</div><div style="font-size:9.5px;color:var(--muted);letter-spacing:.09em">CENTRES</div></div>
+      <div><div class="mono" style="font-size:21px;font-weight:700">17</div><div style="font-size:9.5px;color:var(--muted);letter-spacing:.09em">STREAK</div></div>
+      <div><div class="mono" style="font-size:21px;font-weight:700">12%</div><div style="font-size:9.5px;color:var(--muted);letter-spacing:.09em">TOP</div></div>
+    </div>
+    <div style="border:2px solid var(--ink);border-top:0;padding:11px">
+      <div style="font-family:Oswald,sans-serif;font-size:19px;text-transform:uppercase">East side specialist</div>
+      <div class="mono" style="font-size:11.5px;color:var(--muted);margin-top:5px">EAST 82 · CENTRAL 61 · WEST 19 · NORTH 12</div>
+      <div class="fact" style="margin-top:9px">You have never once correctly guessed anything past Bukit Batok.</div>
+    </div>
+  </div></div>
+
+</div>
+
+<h2>Share card — build this first</h2>
+<p class="sub">Spoiler-free. WhatsApp-shaped. This is the growth engine, not a feature.</p>
+<div class="two">
+  <div class="sharecard" style="max-width:340px">
+    <div style="font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase">Hawker Guessr #142</div>
+    <div class="grid5">
+      <span class="g5" style="background:#D6202B;border-color:#D6202B"></span>
+      <span class="g5" style="background:#F2B705;border-color:#F2B705"></span>
+      <span class="g5" style="background:#2E7D4F;border-color:#2E7D4F"></span>
+      <span class="g5" style="background:#2E7D4F;border-color:#2E7D4F"></span>
+      <span class="g5"></span>
+    </div>
+    <div class="mono" style="font-size:26px;font-weight:700">3,847</div>
+    <div style="font-size:13.5px;margin-top:5px">East side specialist 🧭<br>Beat 82% of SG today</div>
+    <div class="mono" style="font-size:11.5px;color:var(--muted);margin-top:9px">hawkerguessr.sg</div>
+  </div>
+  <div>
+    <table>
+      <tr><th>Band</th><th>Score</th><th>Emoji</th></tr>
+      <tr><td>Nailed</td><td class="mono">900+</td><td>🟩</td></tr>
+      <tr><td>Close</td><td class="mono">500–899</td><td>🟨</td></tr>
+      <tr><td>Off</td><td class="mono">200–499</td><td>🟥</td></tr>
+      <tr><td>Lost</td><td class="mono">&lt;200</td><td>⬜</td></tr>
+    </table>
+    <p class="note">It must give away <b>nothing</b>. The whole Wordle mechanic is a brag your friends can't decode until they play. Ship copy-pasteable text <em>and</em> a canvas PNG for Instagram Stories.</p>
+  </div>
+</div>
+
+<h2>Voice</h2>
+<p class="sub">A dry local friend. Not a tourism board. "Lah" appears at most once per session.</p>
+<div class="vo">
+  <p><b>Nailed it</b>Steady. 987 points.</p>
+  <p><b>Close</b>Same coffee shop uncle, different block.</p>
+  <p><b>Way off</b>You put the pin in Tuas. Tuas has 1 hawker centre. It is not this one.</p>
+  <p><b>Streak lost</b>17 days gone. Start again lor.</p>
+  <p><b>Empty state</b>You haven't played today. Your friends have.</p>
+</div>
+
+<h2>Motif rules</h2>
+<table>
+  <tr><th>Element</th><th>Rule</th></tr>
+  <tr><td>Corners</td><td>0px radius everywhere. Enamel plates don't have rounded corners.</td></tr>
+  <tr><td>Borders</td><td>2px solid ink. No shadows, no blur, no glass.</td></tr>
+  <tr><td>Round indicator</td><td>Five stall-number tiles 01–05. Fill chilli as completed, kaya for current. Signature element — appears on game, card, and share image.</td></tr>
+  <tr><td>Numbers</td><td>Tabular figures, always. A jittering countdown looks broken.</td></tr>
+  <tr><td>Reveal animation</td><td>~1.8s: photo lifts, line draws pin→truth, distance counts up, fact card slides. Skippable on tap. Polish this above all else.</td></tr>
+  <tr><td>Touch targets</td><td>Min 48px. Uncles are the audience with the best answers and the worst eyesight.</td></tr>
+  <tr><td>Photo credit</td><td>Always visible when a photo isn't yours. Non-negotiable.</td></tr>
+</table>
+
+<p class="note" style="margin-top:36px">Full spec, scoring maths, schema, risks and 8-week build plan: <b>PRD.md</b> in the same folder.</p>
+
+</div>
+</body>
+</html>

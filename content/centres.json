@@ -1,0 +1,552 @@
+[
+  {
+    "id": "maxwell-food-centre",
+    "name": "Maxwell Food Centre",
+    "officialName": "MAXWELL FOOD CENTRE",
+    "address": "1 KADAYANALLUR STREET MAXWELL FOOD CENTRE SINGAPORE 069184",
+    "postal": "069184",
+    "region": "C",
+    "lat": 1.28033142727315,
+    "lng": 103.844747227479
+  },
+  {
+    "id": "chinatown-complex",
+    "name": "Chinatown Complex",
+    "officialName": "CHINATOWN COMPLEX",
+    "address": "335 SMITH STREET CHINATOWN COMPLEX SINGAPORE 050335",
+    "postal": "050335",
+    "region": "C",
+    "lat": 1.2822749605271,
+    "lng": 103.843238518071
+  },
+  {
+    "id": "hong-lim-market-and-food-centre",
+    "name": "Hong Lim Market and Food Centre",
+    "officialName": "HONG LIM FOOD CENTRE AND MARKET",
+    "address": "531A UPPER CROSS STREET HONG LIM FOOD CENTRE AND MARKET",
+    "postal": null,
+    "region": "C",
+    "lat": 1.28532379322674,
+    "lng": 103.845776735598
+  },
+  {
+    "id": "people-s-park-food-centre",
+    "name": "People's Park Food Centre",
+    "officialName": "PEOPLE'S PARK FOOD CENTRE",
+    "address": "32 NEW MARKET ROAD PEOPLE'S PARK FOOD CENTRE",
+    "postal": null,
+    "region": "C",
+    "lat": 1.28497943108466,
+    "lng": 103.84256768083
+  },
+  {
+    "id": "amoy-street-food-centre",
+    "name": "Amoy Street Food Centre",
+    "officialName": "AMOY STREET FOOD CENTRE",
+    "address": "7 MAXWELL ROAD AMOY STREET FOOD CENTRE",
+    "postal": null,
+    "region": "C",
+    "lat": 1.2793398636571,
+    "lng": 103.846652482254
+  },
+  {
+    "id": "lau-pa-sat",
+    "name": "Lau Pa Sat",
+    "officialName": "LAU PA SAT",
+    "address": "18 RAFFLES QUAY LAU PA SAT SINGAPORE 048582",
+    "postal": "048582",
+    "region": "C",
+    "lat": 1.28059421956056,
+    "lng": 103.850408357959
+  },
+  {
+    "id": "telok-ayer-market",
+    "name": "Telok Ayer Market",
+    "officialName": "FORMER TELOK AYER MARKET (LAU PA SAT)",
+    "address": "18 RAFFLES QUAY FORMER TELOK AYER MARKET (LAU PA SAT)",
+    "postal": null,
+    "region": "C",
+    "lat": 1.28065386814644,
+    "lng": 103.850412718567
+  },
+  {
+    "id": "tekka-centre",
+    "name": "Tekka Centre",
+    "officialName": "ZHUJIAO CENTRE (TEKKA MARKET)",
+    "address": "662 BUFFALO ROAD ZHUJIAO CENTRE (TEKKA MARKET) SINGAPORE 210662",
+    "postal": "210662",
+    "region": "C",
+    "lat": 1.30624722914968,
+    "lng": 103.849956033902
+  },
+  {
+    "id": "berseh-food-centre",
+    "name": "Berseh Food Centre",
+    "officialName": "BERSEH FOOD CENTRE",
+    "address": "166 JALAN BESAR BERSEH FOOD CENTRE SINGAPORE 208877",
+    "postal": "208877",
+    "region": "C",
+    "lat": 1.30734410946371,
+    "lng": 103.856888783769
+  },
+  {
+    "id": "north-bridge-road-market-and-food-centre",
+    "name": "North Bridge Road Market and Food Centre",
+    "officialName": "NORTH BRIDGE ROAD MARKET AND FOOD CENTRE",
+    "address": "861 NORTH BRIDGE ROAD NORTH BRIDGE ROAD MARKET AND FOOD CENTRE SINGAPORE 198783",
+    "postal": "198783",
+    "region": "C",
+    "lat": 1.30614080746519,
+    "lng": 103.864099281276
+  },
+  {
+    "id": "golden-mile-food-centre",
+    "name": "Golden Mile Food Centre",
+    "officialName": "GOLDEN MILE FOOD CENTRE",
+    "address": "505 BEACH ROAD GOLDEN MILE FOOD CENTRE SINGAPORE 199583",
+    "postal": "199583",
+    "region": "C",
+    "lat": 1.30314175320333,
+    "lng": 103.863877615334
+  },
+  {
+    "id": "newton-food-centre",
+    "name": "Newton Food Centre",
+    "officialName": "NEWTON FOOD CENTRE",
+    "address": "500 CLEMENCEAU AVENUE NORTH NEWTON FOOD CENTRE SINGAPORE 229495",
+    "postal": "229495",
+    "region": "C",
+    "lat": 1.31191552031274,
+    "lng": 103.839569728721
+  },
+  {
+    "id": "adam-road-food-centre",
+    "name": "Adam Road Food Centre",
+    "officialName": "ADAM ROAD FOOD CENTRE",
+    "address": "2 ADAM ROAD ADAM ROAD FOOD CENTRE",
+    "postal": null,
+    "region": "C",
+    "lat": 1.3240827139625,
+    "lng": 103.814182099841
+  },
+  {
+    "id": "whampoa-makan-place",
+    "name": "Whampoa Makan Place",
+    "officialName": "WHAMPOA DRIVE MAKAN PLACE",
+    "address": "91 WHAMPOA DRIVE WHAMPOA DRIVE MAKAN PLACE SINGAPORE 320091",
+    "postal": "320091",
+    "region": "C",
+    "lat": 1.32342818718207,
+    "lng": 103.854060197812
+  },
+  {
+    "id": "toa-payoh-lorong-8-market-and-food-centre",
+    "name": "Toa Payoh Lorong 8 Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 210 TOA PAYOH LORONG 8)",
+    "address": "210 LORONG 8 TOA PAYOH MARKET & HAWKER CENTRE (BLK 210 TOA PAYOH LORONG 8) SINGAPORE 310210",
+    "postal": "310210",
+    "region": "C",
+    "lat": 1.3402610461881,
+    "lng": 103.854395758866
+  },
+  {
+    "id": "tiong-bahru-market",
+    "name": "Tiong Bahru Market",
+    "officialName": "TIONG BAHRU MARKET",
+    "address": "30 SENG POH ROAD TIONG BAHRU MARKET SINGAPORE 168898",
+    "postal": "168898",
+    "region": "C",
+    "lat": 1.28478559810371,
+    "lng": 103.832181546885
+  },
+  {
+    "id": "zion-riverside-food-centre",
+    "name": "Zion Riverside Food Centre",
+    "officialName": "ZION RIVERSIDE FOOD CENTRE",
+    "address": "70 ZION ROAD ZION RIVERSIDE FOOD CENTRE SINGAPORE 247792",
+    "postal": "247792",
+    "region": "C",
+    "lat": 1.2923422114207,
+    "lng": 103.831189023623
+  },
+  {
+    "id": "havelock-road-cooked-food-centre",
+    "name": "Havelock Road Cooked Food Centre",
+    "officialName": "HAVELOCK ROAD COOKED FOOD CENTRE",
+    "address": "22A HAVELOCK ROAD HAVELOCK ROAD COOKED FOOD CENTRE SINGAPORE 161022",
+    "postal": "161022",
+    "region": "C",
+    "lat": 1.28797051657173,
+    "lng": 103.829623413554
+  },
+  {
+    "id": "beo-crescent-market",
+    "name": "Beo Crescent Market",
+    "officialName": "BEO CRESCENT MARKET",
+    "address": "38A BEO CRESCENT BEO CRESCENT MARKET SINGAPORE 169982",
+    "postal": "169982",
+    "region": "C",
+    "lat": 1.28883089150258,
+    "lng": 103.827353892228
+  },
+  {
+    "id": "bukit-merah-view-market-and-food-centre",
+    "name": "Bukit Merah View Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 115 BUKIT MERAH VIEW)",
+    "address": "115 BUKIT MERAH VIEW MARKET & HAWKER CENTRE (BLK 115 BUKIT MERAH VIEW) SINGAPORE 151115",
+    "postal": "151115",
+    "region": "C",
+    "lat": 1.28550445567433,
+    "lng": 103.821823256087
+  },
+  {
+    "id": "redhill-food-centre",
+    "name": "Redhill Food Centre",
+    "officialName": "REDHILL FOOD CENTRE",
+    "address": "85 REDHILL LANE REDHILL FOOD CENTRE SINGAPORE 150085",
+    "postal": "150085",
+    "region": "C",
+    "lat": 1.28730751501552,
+    "lng": 103.818311195307
+  },
+  {
+    "id": "abc-brickworks-food-centre",
+    "name": "ABC Brickworks Food Centre",
+    "officialName": "ABC BRICKWORKS MARKET & FOOD CENTRE",
+    "address": "6 JALAN BUKIT MERAH ABC BRICKWORKS MARKET & FOOD CENTRE SINGAPORE 150006",
+    "postal": "150006",
+    "region": "C",
+    "lat": 1.28688297261475,
+    "lng": 103.808131274161
+  },
+  {
+    "id": "alexandra-village-food-centre",
+    "name": "Alexandra Village Food Centre",
+    "officialName": "ALEXANDRA VILLAGE FOOD CENTRE",
+    "address": "120 BUKIT MERAH LANE 1 ALEXANDRA VILLAGE FOOD CENTRE SINGAPORE 150120",
+    "postal": "150120",
+    "region": "C",
+    "lat": 1.28630594274136,
+    "lng": 103.804492637648
+  },
+  {
+    "id": "commonwealth-crescent-market",
+    "name": "Commonwealth Crescent Market",
+    "officialName": "COMMONWEALTH CRESCENT MARKET",
+    "address": "31 COMMONWEALTH CRESCENT COMMONWEALTH CRESCENT MARKET SINGAPORE 149644",
+    "postal": "149644",
+    "region": "C",
+    "lat": 1.30690013206335,
+    "lng": 103.800367271218
+  },
+  {
+    "id": "ghim-moh-market-and-food-centre",
+    "name": "Ghim Moh Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 20 GHIM MOH ROAD)",
+    "address": "20 GHIM MOH ROAD MARKET & HAWKER CENTRE (BLK 20 GHIM MOH ROAD) SINGAPORE 270020",
+    "postal": "270020",
+    "region": "C",
+    "lat": 1.31099663218896,
+    "lng": 103.78823030662
+  },
+  {
+    "id": "holland-village-market-and-food-centre",
+    "name": "Holland Village Market and Food Centre",
+    "officialName": "HOLLAND VILLAGE MARKET & FOOD CENTRE",
+    "address": "1 LORONG MAMBONG HOLLAND VILLAGE MARKET & FOOD CENTRE SINGAPORE 277700",
+    "postal": "277700",
+    "region": "C",
+    "lat": 1.31107297402127,
+    "lng": 103.794876419662
+  },
+  {
+    "id": "bukit-timah-market",
+    "name": "Bukit Timah Market",
+    "officialName": "51 UPPER BUKIT TIMAH ROAD SINGAPORE 588215",
+    "address": "51 UPPER BUKIT TIMAH ROAD SINGAPORE 588215",
+    "postal": "588215",
+    "region": "C",
+    "lat": 1.33923656663791,
+    "lng": 103.776330414631
+  },
+  {
+    "id": "old-airport-road-food-centre",
+    "name": "Old Airport Road Food Centre",
+    "officialName": "51 OLD AIRPORT ROAD FOOD CENTRE AND SHOPPING MALL",
+    "address": "51 OLD AIRPORT ROAD 51 OLD AIRPORT ROAD FOOD CENTRE AND SHOPPING MALL SINGAPORE 390051",
+    "postal": "390051",
+    "region": "E",
+    "lat": 1.3082518471287,
+    "lng": 103.88580870609
+  },
+  {
+    "id": "dunman-food-centre",
+    "name": "Dunman Food Centre",
+    "officialName": "DUNMAN FOOD CENTRE",
+    "address": "271 ONAN ROAD DUNMAN FOOD CENTRE SINGAPORE 424768",
+    "postal": "424768",
+    "region": "E",
+    "lat": 1.30941788760759,
+    "lng": 103.901825408227
+  },
+  {
+    "id": "geylang-serai-market",
+    "name": "Geylang Serai Market",
+    "officialName": "GEYLANG SERAI MARKET",
+    "address": "1 GEYLANG SERAI GEYLANG SERAI MARKET",
+    "postal": null,
+    "region": "E",
+    "lat": 1.31672515005311,
+    "lng": 103.897977411392
+  },
+  {
+    "id": "haig-road-market-and-food-centre",
+    "name": "Haig Road Market and Food Centre",
+    "officialName": "HAIG ROAD MARKET AND COOKED FOOD CENTRE",
+    "address": "14 HAIG ROAD HAIG ROAD MARKET AND COOKED FOOD CENTRE SINGAPORE 430014",
+    "postal": "430014",
+    "region": "E",
+    "lat": 1.31542509324914,
+    "lng": 103.895479253328
+  },
+  {
+    "id": "circuit-road-food-centre",
+    "name": "Circuit Road Food Centre",
+    "officialName": "CIRCUIT ROAD MARKET AND FOOD CENTRE",
+    "address": "80 CIRCUIT ROAD CIRCUIT ROAD MARKET AND FOOD CENTRE SINGAPORE 370080",
+    "postal": "370080",
+    "region": "E",
+    "lat": 1.32783414615937,
+    "lng": 103.887102669236
+  },
+  {
+    "id": "marine-parade-central-market-and-food-centre",
+    "name": "Marine Parade Central Market and Food Centre",
+    "officialName": "MARINE PARADE CENTRAL MARKET AND FOOD CENTRE",
+    "address": "84 MARINE PARADE CENTRAL MARINE PARADE CENTRAL MARKET AND FOOD CENTRE",
+    "postal": null,
+    "region": "E",
+    "lat": 1.30228520968842,
+    "lng": 103.906288669909
+  },
+  {
+    "id": "bedok-interchange-hawker-centre",
+    "name": "Bedok Interchange Hawker Centre",
+    "officialName": "BEDOK INTERCHANGE HAWKER CENTRE",
+    "address": "208B NEW UPPER CHANGI ROAD BEDOK INTERCHANGE HAWKER CENTRE",
+    "postal": null,
+    "region": "E",
+    "lat": 1.32481816551889,
+    "lng": 103.930544296289
+  },
+  {
+    "id": "fengshan-market-and-food-centre",
+    "name": "Fengshan Market and Food Centre",
+    "officialName": "FENGSHAN CENTRE",
+    "address": "85 BEDOK NORTH STREET 4 FENGSHAN CENTRE SINGAPORE 460085",
+    "postal": "460085",
+    "region": "E",
+    "lat": 1.33200482399436,
+    "lng": 103.93876843919
+  },
+  {
+    "id": "tampines-round-market-and-food-centre",
+    "name": "Tampines Round Market and Food Centre",
+    "officialName": "TAMPINES ROUND MARKET AND FOOD CENTRE",
+    "address": "137 TAMPINES STREET 11 TAMPINES ROUND MARKET AND FOOD CENTRE SINGAPORE 521137",
+    "postal": "521137",
+    "region": "E",
+    "lat": 1.34537347373749,
+    "lng": 103.944629422828
+  },
+  {
+    "id": "our-tampines-hub-hawker-centre",
+    "name": "Our Tampines Hub Hawker Centre",
+    "officialName": "HAWKER CENTRE @ OUR TAMPINES HUB",
+    "address": "1 TAMPINES WALK HAWKER CENTRE @ OUR TAMPINES HUB",
+    "postal": null,
+    "region": "E",
+    "lat": 1.35354740485205,
+    "lng": 103.940381104547
+  },
+  {
+    "id": "pasir-ris-central-hawker-centre",
+    "name": "Pasir Ris Central Hawker Centre",
+    "officialName": "PASIR RIS CENTRAL HAWKER CENTRE",
+    "address": "110 PASIR RIS CENTRAL PASIR RIS CENTRAL HAWKER CENTRE SINGAPORE 519641",
+    "postal": "519641",
+    "region": "E",
+    "lat": 1.37347252064326,
+    "lng": 103.951571342467
+  },
+  {
+    "id": "changi-village-hawker-centre",
+    "name": "Changi Village Hawker Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLKS 2 & 3 CHANGI VILLAGE ROAD)",
+    "address": "2 CHANGI VILLAGE ROAD MARKET & HAWKER CENTRE (BLKS 2 & 3 CHANGI VILLAGE ROAD) SINGAPORE 500002",
+    "postal": "500002",
+    "region": "E",
+    "lat": 1.3891516485857,
+    "lng": 103.988245247726
+  },
+  {
+    "id": "clementi-448-market-and-food-centre",
+    "name": "Clementi 448 Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 448 CLEMENTI AVENUE 3)",
+    "address": "448 CLEMENTI AVENUE 3 MARKET & HAWKER CENTRE (BLK 448 CLEMENTI AVENUE 3) SINGAPORE 120448",
+    "postal": "120448",
+    "region": "W",
+    "lat": 1.31331969319644,
+    "lng": 103.764517192874
+  },
+  {
+    "id": "taman-jurong-market-and-food-centre",
+    "name": "Taman Jurong Market and Food Centre",
+    "officialName": "TAMAN JURONG MARKET & FOOD CENTRE",
+    "address": "3 YUNG SHENG ROAD TAMAN JURONG MARKET & FOOD CENTRE SINGAPORE 618499",
+    "postal": "618499",
+    "region": "W",
+    "lat": 1.3347210661928,
+    "lng": 103.721583797451
+  },
+  {
+    "id": "yuhua-village-market-and-food-centre",
+    "name": "Yuhua Village Market and Food Centre",
+    "officialName": "YUHUA VILLAGE MARKET AND FOOD CENTRE",
+    "address": "254 JURONG EAST STREET 24 YUHUA VILLAGE MARKET AND FOOD CENTRE SINGAPORE 600254",
+    "postal": "600254",
+    "region": "W",
+    "lat": 1.34348818520494,
+    "lng": 103.73773841183
+  },
+  {
+    "id": "boon-lay-place-food-village",
+    "name": "Boon Lay Place Food Village",
+    "officialName": "BOON LAY PLACE MARKET AND FOOD VILLAGE",
+    "address": "221B BOON LAY PLACE BOON LAY PLACE MARKET AND FOOD VILLAGE SINGAPORE 642221",
+    "postal": "642221",
+    "region": "W",
+    "lat": 1.34576075706899,
+    "lng": 103.713083742931
+  },
+  {
+    "id": "jurong-west-505-market-and-food-centre",
+    "name": "Jurong West 505 Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 505 JURONG WEST STREET 52)",
+    "address": "505 JURONG WEST STREET 52 MARKET & HAWKER CENTRE (BLK 505 JURONG WEST STREET 52) SINGAPORE 640505",
+    "postal": "640505",
+    "region": "W",
+    "lat": 1.34965729130746,
+    "lng": 103.718443677825
+  },
+  {
+    "id": "chong-pang-market-and-food-centre",
+    "name": "Chong Pang Market and Food Centre",
+    "officialName": "CHONG PANG MARKET & FOOD CENTRE",
+    "address": "105 YISHUN RING ROAD CHONG PANG MARKET & FOOD CENTRE SINGAPORE 760105",
+    "postal": "760105",
+    "region": "N",
+    "lat": 1.43171836662838,
+    "lng": 103.828114256975
+  },
+  {
+    "id": "yishun-park-hawker-centre",
+    "name": "Yishun Park Hawker Centre",
+    "officialName": "YISHUN PARK HAWKER CENTRE",
+    "address": "51 YISHUN AVENUE 11 YISHUN PARK HAWKER CENTRE SINGAPORE 768867",
+    "postal": "768867",
+    "region": "N",
+    "lat": 1.42498786287366,
+    "lng": 103.844747525064
+  },
+  {
+    "id": "kampung-admiralty-hawker-centre",
+    "name": "Kampung Admiralty Hawker Centre",
+    "officialName": "KAMPUNG ADMIRALTY HAWKER CENTRE",
+    "address": "676 WOODLANDS DRIVE 71 KAMPUNG ADMIRALTY HAWKER CENTRE",
+    "postal": null,
+    "region": "N",
+    "lat": 1.43991608263415,
+    "lng": 103.800701203964
+  },
+  {
+    "id": "sembawang-hills-food-centre",
+    "name": "Sembawang Hills Food Centre",
+    "officialName": "SEMBAWANG HILLS FOOD CENTRE",
+    "address": "590 UPPER THOMSON ROAD SEMBAWANG HILLS FOOD CENTRE SINGAPORE 574419",
+    "postal": "574419",
+    "region": "N",
+    "lat": 1.37231949296183,
+    "lng": 103.829018145089
+  },
+  {
+    "id": "woodlands-street-12-market",
+    "name": "Woodlands Street 12 Market",
+    "officialName": "MARKET & HAWKER CENTRE (BLKS 20/21 MARSILING LANE)",
+    "address": "21 MARSILING LANE MARKET & HAWKER CENTRE (BLKS 20/21 MARSILING LANE)",
+    "postal": null,
+    "region": "N",
+    "lat": 1.44383165244262,
+    "lng": 103.777210383669
+  },
+  {
+    "id": "ang-mo-kio-724-market-and-food-centre",
+    "name": "Ang Mo Kio 724 Market and Food Centre",
+    "officialName": "MARKET & HAWKER CENTRE (BLK 724 ANG MO KIO AVE 6)",
+    "address": "724 ANG MO KIO AVENUE 6 MARKET & HAWKER CENTRE (BLK 724 ANG MO KIO AVE 6) SINGAPORE 560724",
+    "postal": "560724",
+    "region": "NE",
+    "lat": 1.37217258545171,
+    "lng": 103.846510310202
+  },
+  {
+    "id": "mayflower-market-and-food-centre",
+    "name": "Mayflower Market and Food Centre",
+    "officialName": "MAYFLOWER MARKET AND FOOD CENTRE",
+    "address": "162 ANG MO KIO AVENUE 4 MAYFLOWER MARKET AND FOOD CENTRE SINGAPORE 560162",
+    "postal": "560162",
+    "region": "NE",
+    "lat": 1.3741075702016,
+    "lng": 103.838863921122
+  },
+  {
+    "id": "serangoon-garden-market-and-food-centre",
+    "name": "Serangoon Garden Market and Food Centre",
+    "officialName": "SERANGOON GARDEN MARKET",
+    "address": "49A SERANGOON GARDEN WAY SERANGOON GARDEN MARKET SINGAPORE 555945",
+    "postal": "555945",
+    "region": "NE",
+    "lat": 1.36308501111104,
+    "lng": 103.866724949118
+  },
+  {
+    "id": "kovan-market-and-food-centre",
+    "name": "Kovan Market and Food Centre",
+    "officialName": "KOVAN HOUGANG MARKET AND FOOD CENTRE",
+    "address": "209 HOUGANG STREET 21 KOVAN HOUGANG MARKET AND FOOD CENTRE SINGAPORE 530209",
+    "postal": "530209",
+    "region": "NE",
+    "lat": 1.35908384091048,
+    "lng": 103.886055368064
+  },
+  {
+    "id": "hougang-105-hainanese-village-centre",
+    "name": "Hougang 105 Hainanese Village Centre",
+    "officialName": "HOUGANG 105 HAINANESE VILLAGE CENTRE",
+    "address": "105 HOUGANG AVENUE 1 HOUGANG 105 HAINANESE VILLAGE CENTRE SINGAPORE 530105",
+    "postal": "530105",
+    "region": "NE",
+    "lat": 1.35408273910145,
+    "lng": 103.890130407955
+  },
+  {
+    "id": "punggol-hawker-centre",
+    "name": "Punggol Hawker Centre",
+    "officialName": "ONE PUNGGOL HAWKER CENTRE",
+    "address": "1 PUNGGOL DRIVE ONE PUNGGOL HAWKER CENTRE",
+    "postal": null,
+    "region": "NE",
+    "lat": 1.40852158088602,
+    "lng": 103.90503420803
+  }
+]
