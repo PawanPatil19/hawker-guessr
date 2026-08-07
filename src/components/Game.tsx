@@ -62,6 +62,7 @@ export function Game() {
         <RevealPanel
           result={game.reveal}
           isLast={game.results.length >= ROUNDS_PER_PUZZLE}
+          image={game.puzzle.rounds[game.reveal.index]?.image ?? null}
           onNext={game.next}
         />
       )}

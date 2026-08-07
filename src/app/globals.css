@@ -176,6 +176,9 @@ button, input { font: inherit; }
 
 /* reveal */
 .reveal { max-width: 760px; margin: 0 auto; }
+.reveal:focus { outline: none; }
+.reveal__media { display: grid; gap: 12px; }
+.reveal__photo { display: block; width: 100%; max-height: 360px; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
 .reveal__body { padding: 26px 4px 0; }
 .reveal__verdict { margin-bottom: 5px; color: var(--chilli); font-size: 14px; font-weight: 700; }
 .reveal__scoreline { margin-bottom: 10px; font-family: var(--mono); font-size: clamp(25px, 7vw, 38px); font-weight: 700; line-height: 1.1; letter-spacing: -.03em; }
@@ -218,6 +221,9 @@ button, input { font: inherit; }
   .clue, .clue__photo, .map { height: min(62vh, 570px); min-height: 480px; }
   .clue__photo { max-height: none; }
   .round-controls { margin-inline: 18px; }
+  .reveal { max-width: 960px; }
+  .reveal__media { grid-template-columns: 1fr 1fr; }
+  .reveal__media .map, .reveal__photo { height: 380px; max-height: 380px; }
 }
 
 @media (max-width: 560px) {

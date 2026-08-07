@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import type { RoundResult } from "@/domain/types";
 import { REGION_NAMES } from "@/domain/types";
 import { formatDistance } from "@/domain/geo";
@@ -10,18 +11,38 @@ import { RevealMap } from "./map/RevealMap";
 interface Props {
   result: RoundResult;
   isLast: boolean;
+  image: string | null;
   onNext: () => void;
 }
 
 /** The payoff. Distance, truth, one fact worth repeating. */
-export function RevealPanel({ result, isLast, onNext }: Props) {
+export function RevealPanel({ result, isLast, image, onNext }: Props) {
   const isLocation = result.guess.kind === "LOCATION";
+  const region = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    region.current?.focus({ preventScroll: true });
+  }, [result.index]);
 
   return (
-    <section className="reveal">
-      {isLocation && result.guess.kind === "LOCATION" && (
-        <RevealMap guess={result.guess} truth={result.truth} />
-      )}
+    <section
+      className="reveal"
+      ref={region}
+      tabIndex={-1}
+      role="status"
+      aria-live="polite"
+      aria-label={`Round ${result.index + 1} result: ${result.points} points. ${result.truth.centreName}.`}
+    >
+      <div className="reveal__media">
+        {image && (
+          // The source is authored content rather than a build-time import.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="reveal__photo" src={image} alt="The hawker centre clue you just guessed" />
+        )}
+        {isLocation && result.guess.kind === "LOCATION" && (
+          <RevealMap guess={result.guess} truth={result.truth} />
+        )}
+      </div>
 
       <div className="reveal__body">
         <p className="reveal__verdict">{result.verdict}</p>
