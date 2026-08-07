@@ -34,7 +34,7 @@ export function scorePrice(guessCents: number, actualCents: number): number {
 export type Band = "nailed" | "close" | "off" | "lost";
 
 export function bandFor(points: number): Band {
-  if (points >= 900) return "nailed";
+  if (points >= 800) return "nailed";
   if (points >= 500) return "close";
   if (points >= 200) return "off";
   return "lost";
@@ -43,7 +43,7 @@ export function bandFor(points: number): Band {
 export const BAND_EMOJI: Record<Band, string> = {
   nailed: "🟩",
   close: "🟨",
-  off: "🟥",
+  off: "🟧",
   lost: "⬜",
 };
 

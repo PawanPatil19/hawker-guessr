@@ -34,7 +34,7 @@ export function locationVerdict(points: number, seed: number): string {
     default:
       return pick(
         [
-          "That is not even the same MRT line.",
+          "Singapore is small. That miss was not.",
           "You could have walked there in a day. Barely.",
           "Bold guess. Wrong, but bold.",
         ],
