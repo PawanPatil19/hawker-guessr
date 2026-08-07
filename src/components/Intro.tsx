@@ -87,10 +87,11 @@ export function Intro() {
           <br />
           <AnimatedLine text={LINE_TWO} second />
         </p>
+        <p className="intro__how">Five photos. Drop a pin. Closer earns more.</p>
       </div>
 
       <button className="intro__enter" type="button" onClick={dismiss}>
-        Enter <span aria-hidden>↘</span>
+        Skip intro <span aria-hidden>↘</span>
       </button>
     </section>
   );
