@@ -1,6 +1,6 @@
 import type { RoundResult } from "@/domain/types";
 import { REGION_NAMES } from "@/domain/types";
-import { BAND_EMOJI, bandFor } from "@/domain/scoring";
+import { BAND_EMOJI, MAX_PUZZLE_POINTS, bandFor } from "@/domain/scoring";
 
 /**
  * The share text is the growth engine, so it obeys one rule: it gives away
@@ -37,15 +37,17 @@ export function buildShareText(
   puzzleNumber: number,
   results: RoundResult[],
   total: number,
+  streak: number,
   origin: string,
 ): string {
   const region = strongestRegion(results);
   return [
     `Hawker Guessr #${puzzleNumber}`,
     "",
-    `${emojiGrid(results)}  ${total.toLocaleString()}`,
+    `${emojiGrid(results)}  ${total.toLocaleString()} / ${MAX_PUZZLE_POINTS.toLocaleString()}`,
     "",
     region ? `Knew ${region} best today 🧭` : null,
+    `${streak} day streak 🔥`,
     origin,
   ]
     .filter((line) => line !== null)
@@ -53,6 +55,20 @@ export function buildShareText(
 }
 
 /** Native share sheet where available, clipboard everywhere else. */
+function legacyCopy(text: string): boolean {
+  if (typeof document === "undefined") return false;
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.setAttribute("readonly", "");
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.select();
+  const copied = document.execCommand("copy");
+  area.remove();
+  return copied;
+}
+
 export async function share(text: string): Promise<"shared" | "copied"> {
   if (typeof navigator !== "undefined" && navigator.share) {
     try {
@@ -62,6 +78,14 @@ export async function share(text: string): Promise<"shared" | "copied"> {
       if (error instanceof DOMException && error.name === "AbortError") throw error;
     }
   }
-  await navigator.clipboard.writeText(text);
-  return "copied";
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return "copied";
+    } catch {
+      // Older iOS and embedded browsers may expose but deny Clipboard API.
+    }
+  }
+  if (legacyCopy(text)) return "copied";
+  throw new Error("Sharing is unavailable in this browser");
 }

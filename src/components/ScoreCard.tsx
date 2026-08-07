@@ -52,7 +52,12 @@ export function ScoreCard({ puzzleNumber, results, total, streak }: Props) {
         <p className="score__streak">{streak} day streak 🔥</p>
       </div>
 
-      <ShareButton puzzleNumber={puzzleNumber} results={results} total={total} />
+      <ShareButton
+        puzzleNumber={puzzleNumber}
+        results={results}
+        total={total}
+        streak={streak}
+      />
       <p className="score__next">
         <Countdown />
       </p>
