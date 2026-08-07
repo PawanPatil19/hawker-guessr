@@ -23,6 +23,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hawker-guessr.vercel.app"),
   title: "Hawker Guessr 🇸🇬",
   description:
     "One photo, one guess, every day. How well do you actually know Singapore?",
@@ -30,7 +31,16 @@ export const metadata: Metadata = {
     title: "Hawker Guessr 🇸🇬",
     description: "Test your Singapore hawker knowledge. New puzzle daily at 6am.",
     type: "website",
+    url: "/",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hawker Guessr 🇸🇬",
+    description: "One photo, one pin. How well do you know Singapore?",
+    images: ["/opengraph-image"],
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 export const viewport: Viewport = {
