@@ -1,5 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+// Regression: ISSUE-004 — progress disappeared when server memory was replaced
+// Found by /qa on 2026-08-08
+// Report: .gstack/qa-reports/qa-report-hawker-guessr-vercel-app-2026-08-08.md
+
 const state = vi.hoisted(() => ({ value: "" }));
 
 vi.mock("server-only", () => ({}));

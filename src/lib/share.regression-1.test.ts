@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+// Regression: ISSUE-007 — share cards omitted score context and streak
+// Found by /qa on 2026-08-08
+// Report: .gstack/qa-reports/qa-report-hawker-guessr-vercel-app-2026-08-08.md
+
 import type { RoundResult } from "@/domain/types";
 import { buildShareText } from "./share";
 

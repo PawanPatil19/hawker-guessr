@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+// Regression: ISSUE-010 — score squares used a misleading red result band
+// Found by /qa on 2026-08-08
+// Report: .gstack/qa-reports/qa-report-hawker-guessr-vercel-app-2026-08-08.md
+
 import { BAND_EMOJI, bandFor } from "./scoring";
 
 describe("result bands", () => {
