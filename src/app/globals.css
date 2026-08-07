@@ -97,6 +97,11 @@ button, input { font: inherit; }
   overflow: hidden; color: var(--muted); font-family: var(--mono); font-size: 10px;
   letter-spacing: .08em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap;
 }
+.game__progress { display: grid; justify-items: end; gap: 5px; }
+.game__running-score {
+  color: var(--muted); font-family: var(--mono); font-size: 10px;
+  font-variant-numeric: tabular-nums; letter-spacing: .04em;
+}
 .tiles { display: flex; width: min(26vw, 176px); gap: 6px; list-style: none; }
 .tile { flex: 1; height: 4px; border-radius: 4px; background: var(--line); }
 .tile--current { background: var(--ink); }
@@ -241,8 +246,8 @@ button, input { font: inherit; }
   .map { height: clamp(300px, 42svh, 360px); }
   .guess-layout { gap: 14px; }
   .reveal__body { padding-top: 22px; }
-  .score__rounds li { grid-template-columns: 22px minmax(0,1fr) auto; }
-  .score__delta { display: none; }
+  .score__rounds li { grid-template-columns: 22px minmax(0,1fr) auto auto; gap: 6px; }
+  .score__delta, .score__pts { font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

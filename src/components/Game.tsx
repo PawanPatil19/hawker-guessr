@@ -55,7 +55,14 @@ export function Game() {
           </h1>
           <span className="game__number">Daily puzzle #{game.puzzle.number}</span>
         </div>
-        <RoundTiles results={game.results} current={game.roundIndex} />
+        <div className="game__progress">
+          {game.results.length > 0 && (
+            <span className="game__running-score" aria-label={`Current score ${game.total} points`}>
+              {game.total.toLocaleString()} pts
+            </span>
+          )}
+          <RoundTiles results={game.results} current={game.roundIndex} />
+        </div>
       </header>
 
       {game.phase === "reveal" && game.reveal && (
