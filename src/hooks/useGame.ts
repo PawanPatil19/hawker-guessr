@@ -5,7 +5,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Guess, PublicPuzzle, RoundResult } from "@/domain/types";
 import { ROUNDS_PER_PUZZLE } from "@/domain/scoring";
 import { fetchPuzzle, submitGuess } from "@/lib/api";
-import { recordCompletion } from "@/lib/storage";
+import {
+  acknowledgeReveal,
+  recordCompletion,
+  revealWasAcknowledged,
+} from "@/lib/storage";
 
 export type Phase = "loading" | "error" | "guessing" | "reveal" | "done";
 
@@ -47,6 +51,13 @@ export function useGame(): Game {
         }
         setPuzzle(p);
         setResults(p.results);
+        const lastResult = p.results.at(-1);
+        if (
+          lastResult &&
+          !revealWasAcknowledged(p.day, lastResult.index)
+        ) {
+          setReveal(lastResult);
+        }
       })
       .catch((e: Error) => !cancelled && setError(e.message));
     return () => {
@@ -84,7 +95,10 @@ export function useGame(): Game {
     [puzzle, roundIndex, submitting, finished],
   );
 
-  const next = useCallback(() => setReveal(null), []);
+  const next = useCallback(() => {
+    if (puzzle && reveal) acknowledgeReveal(puzzle.day, reveal.index);
+    setReveal(null);
+  }, [puzzle, reveal]);
 
   const total = useMemo(
     () => results.reduce((sum, r) => sum + r.points, 0),

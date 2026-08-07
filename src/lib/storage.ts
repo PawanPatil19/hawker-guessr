@@ -5,6 +5,7 @@
  */
 
 const KEY = "hg_streak";
+const REVEAL_KEY = "hg_reveal_ack";
 
 interface StreakState {
   /** Puzzle day of the last completed puzzle. */
@@ -56,4 +57,26 @@ export function recordCompletion(day: string): StreakState {
   };
   write(next);
   return next;
+}
+
+/** Remember the last reveal the player explicitly continued past. */
+export function acknowledgeReveal(day: string, index: number): void {
+  try {
+    window.localStorage.setItem(REVEAL_KEY, JSON.stringify({ day, index }));
+  } catch {
+    // A refresh may repeat the reveal in private browsing, but play still works.
+  }
+}
+
+/** Whether a restored result still needs to be shown to the player. */
+export function revealWasAcknowledged(day: string, index: number): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const raw = window.localStorage.getItem(REVEAL_KEY);
+    if (!raw) return false;
+    const saved = JSON.parse(raw) as { day?: string; index?: number };
+    return saved.day === day && saved.index === index;
+  } catch {
+    return false;
+  }
 }
