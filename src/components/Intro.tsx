@@ -4,8 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 
 const STORAGE_KEY = "hg_intro_seen";
-const LINE_ONE = "Somewhere in Singapore,";
-const LINE_TWO = "lunch is already waiting.";
+const LINE_ONE = "Spot the hawker.";
+const LINE_TWO = "Pin it on Singapore.";
 
 function AnimatedLine({ text, second = false }: { text: string; second?: boolean }) {
   let characterIndex = 0;
@@ -87,7 +87,7 @@ export function Intro() {
           <br />
           <AnimatedLine text={LINE_TWO} second />
         </p>
-        <p className="intro__how">Five photos. Drop a pin. Closer earns more.</p>
+        <p className="intro__how">Five photos a day. Closer pins score more.</p>
       </div>
 
       <button className="intro__enter" type="button" onClick={dismiss}>
