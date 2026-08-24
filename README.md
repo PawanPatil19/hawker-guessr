@@ -1,86 +1,143 @@
-# Hawker Guessr — image-first prototype
+<div align="center">
+  <img src="docs/assets/hawker-guessr-icon.png" alt="Hawker Guessr icon — a hawker stall shaped like a map pin" width="168" />
 
-Five hawker-centre photos a day. Drop a pin and find out how well you actually
-know Singapore. Full product spec in [PRD.md](PRD.md), visual direction in
-[design.html](design.html).
+  # Hawker Guessr 🇸🇬
+
+  **Spot the hawker. Pin it on Singapore.**
+
+  A daily geography game for everyone who thinks they know Singapore's hawker centres.
+
+  [![Play Hawker Guessr](https://img.shields.io/badge/PLAY_HAWKER_GUESSR-8D3F34?style=for-the-badge&logo=vercel&logoColor=white)](https://hawker-guessr.vercel.app/)
+
+  [![Next.js](https://img.shields.io/badge/Next.js_15-111111?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Vitest](https://img.shields.io/badge/Tested_with_Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
+  [![MapLibre](https://img.shields.io/badge/Maps-MapLibre-396CB2?style=flat-square)](https://maplibre.org/)
+</div>
+
+---
+
+## The game
+
+Hawker Guessr turns Singapore's hawker culture into a quick daily map challenge. Every day brings five photos of real hawker centres. Study the scene, decide where it was taken, and drop your pin on the map.
+
+The closer your guess, the bigger your score. After every round, the game reveals the answer, your distance, a memorable fact about the location, and the photo credit.
+
+> Five photos. Five pins. A maximum of **5,000 points**. How well do you really know Singapore?
+
+### How to play
+
+1. **Study the photo** — signs, architecture, neighbourhood clues, and vibes all count.
+2. **Place your pin** anywhere on the Singapore map.
+3. **Reveal the answer** and see the distance between your guess and the hawker centre.
+4. **Complete five rounds** to build your daily score and streak.
+5. **Share your spoiler-free grid** and challenge your friends.
+
+Scores decay smoothly with distance:
+
+```text
+points = 1,000 × e^(−distance / 2.2 km)
+```
+
+An exact pin earns 1,000 points; a guess 1 km away earns about 635.
+
+## Why it is fun
+
+- **A shared daily puzzle** — everyone gets the same challenge, refreshed at 06:00 SGT.
+- **Photo-first deduction** — recognise places through visual details, not trivia prompts.
+- **Instant map reveal** — compare your pin with the true location after every guess.
+- **Local discoveries** — learn a bite-sized fact about each hawker centre.
+- **Spoiler-free sharing** — post your result grid without revealing any answers.
+- **No account required** — open the site and start playing.
+- **Mobile-first and accessible** — tap controls, keyboard map navigation, and reduced-motion support.
+
+## Built to keep answers secret
+
+Correct locations never ship with the puzzle payload. `GET /api/puzzle` returns a client-safe round with answer fields stripped; `POST /api/guess` validates and scores each guess on the server. A completed round is recorded against an anonymous session so it cannot be replayed for a better score.
+
+```mermaid
+flowchart LR
+    A["Daily puzzle"] -->|"answer-free round"| B["Browser"]
+    B -->|"pin coordinates"| C["Server scoring"]
+    C -->|"points + reveal"| B
+```
+
+## Tech stack
+
+| Area | Technology |
+| --- | --- |
+| App | Next.js 15, React 19, TypeScript |
+| Maps | MapLibre GL with OneMap raster tiles |
+| Testing | Vitest |
+| Deployment | Vercel |
+| Content | Versioned JSON question and hawker-centre banks |
+| Identity | Anonymous cookie session + local streak storage |
+
+## Run locally
+
+### Prerequisites
+
+- Node.js 22 or newer
+- npm
 
 ```bash
+git clone git@github.com:PawanPatil19/hawker-guessr.git
+cd hawker-guessr
 npm install
-npm run dev      # http://localhost:3111
+npm run dev
 ```
 
-## What v1 does
+Open [http://localhost:3111](http://localhost:3111).
 
-- **Daily puzzle**, five rounds, dropping at 06:00 SGT. Same puzzle for everyone.
-- **Five image rounds** — identify a hawker centre by photo and drop a pin on Singapore, scored by distance:
-  `1000 × e^(−d / 2.2km)`. 0 m = 1000 pts, 1 km = 635, 10 km = 11.
-- **Reveal** after each round: your pin, the truth, the line between them, the
-  distance, one fact worth repeating, and the photo licence credit.
-- **Score card** with a spoiler-free emoji grid, today-qualified region read,
-  streak, and a countdown to the next drop.
-- **No login.** An anonymous cookie tracks the day's play; streaks live in
-  localStorage.
+### Useful commands
 
-## Layout
-
-```
-content/
-  centres.json       55 real hawker centres, geocoded via OneMap
-  questions.json     authored prompts plus photo provenance
-public/hawkers/      local, resized photos with answer-neutral filenames
-scripts/geocode.mjs  rebuilds centres.json from OneMap's public geocoder
-
-src/
-  domain/            pure logic, no I/O, no framework — the testable core
-    scoring.ts         distance & price → points, score bands
-    geo.ts             haversine, SG bounds, distance formatting
-    calendar.ts        puzzle days, the 06:00 SGT drop, countdown
-    verdicts.ts        the game's voice, all of it, in one file
-    types.ts           Public* shapes are client-safe; the rest are not
-  server/            server-only; `server-only` makes that a build error
-    repository/        content access + the answer-stripping allow-list
-    services/          scoreRound: the only reader of answer fields
-    plays/             where a session's results live (memory → Supabase)
-    puzzle.ts          deterministic daily assembly
-    session.ts         anonymous cookie identity
-    validation.ts      request parsing
-  app/api/           two thin routes: GET /api/puzzle, POST /api/guess
-  hooks/useGame.ts   the client state machine
-  components/        presentational only; map components under map/
-  lib/               fetch wrappers, share text, storage, money, map style
+```bash
+npm run dev          # Start the development server on port 3111
+npm run build        # Create a production build
+npm run typecheck    # Run TypeScript checks
+npm test             # Run the Vitest suite
+npm run bank:check   # Validate the question bank
+npm run geocode      # Rebuild centre coordinates with OneMap
 ```
 
-The rule the structure exists to enforce: **correct answers never reach the
-browser.** `GET /api/puzzle` returns rounds with every answer field stripped;
-`POST /api/guess` scores one round server-side and records it so a round can't
-be replayed for a better score. Verified — see "Known gaps" for what wasn't.
+## Project structure
 
-## Adding content
+```text
+content/                  Hawker centres, questions, and image provenance
+public/hawkers/           Locally stored, answer-neutral game photos
+scripts/                  Content validation and OneMap geocoding
+src/app/                  Next.js pages, metadata, and API routes
+src/components/           Game, map, reveal, and sharing UI
+src/domain/               Pure scoring, geography, calendar, and type logic
+src/hooks/                Client game state machine
+src/lib/                  API, sharing, storage, and map helpers
+src/server/               Sessions, repositories, validation, and scoring
+```
 
-Append to `content/questions.json`. `centreId` must match an `id` in
-`centres.json`. Web photos must be stored locally under `public/hawkers/` with
-an answer-neutral filename and include `imageCredit`, `imageSourceUrl`, and
-`imageLicense`. Add the question id to `IMAGE_POOL_IDS` in
-`src/server/puzzle.ts` when it is ready to enter the immutable daily pool.
+For the product thinking and visual direction, see [PRD.md](PRD.md) and [DESIGN.md](DESIGN.md).
 
-The prototype currently has **one day** of image content, rotated into a
-different order daily. Add a larger licensed or first-party photo set before a
-public launch.
+## Add a location
 
-## Maps
+1. Add the hawker centre to `content/centres.json`.
+2. Add its question to `content/questions.json` using the matching `centreId`.
+3. Store the image in `public/hawkers/` with an answer-neutral filename.
+4. Include `imageCredit`, `imageSourceUrl`, and `imageLicense`.
+5. Add the approved question ID to `IMAGE_POOL_IDS` in `src/server/puzzle.ts`.
+6. Run `npm run bank:check` and `npm test`.
 
-OneMap raster tiles (Singapore Land Authority) via MapLibre GL. Free, no API
-key, and the basemap actually looks Singaporean. Attribution is required and
-is rendered on every map.
+Please use first-party or properly licensed photography. Photo attribution is shown in every reveal.
 
-## Known gaps
+## Prototype status
 
-- The full five-round flow, pin-drop interaction, reveal maps, phase scroll
-  anchoring, attribution, and score card are verified at a 390×844 mobile
-  viewport in headless Chrome.
-- Plays are in memory and reset on deploy. Swap `src/server/plays/memory.ts`
-  for a Supabase-backed store before leaderboards.
-- No leaderboard, no accounts, no hawker map/profile, no share image (text
-  only). All deliberate v1 cuts — see PRD.md §3.
-- Price content and UI remain in the repository for a later mode, but are not
-  selected or exposed by the image-first daily puzzle.
+The core five-round experience is live and tested. The current content pool covers one five-photo set, reordered for each daily puzzle, and in-memory plays reset when the server redeploys. A larger licensed photo bank and persistent storage are the next steps before leaderboards or accounts.
+
+## Acknowledgements
+
+- Map data and tiles: [OneMap, Singapore Land Authority](https://www.onemap.gov.sg/)
+- Map rendering: [MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/)
+- Every game image retains its source, licence, and creator credit.
+
+<div align="center">
+  <strong>Think you know your hawker centres?</strong><br />
+  <a href="https://hawker-guessr.vercel.app/">Play today's puzzle →</a>
+</div>
