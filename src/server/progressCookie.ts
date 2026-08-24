@@ -15,7 +15,7 @@ interface StoredGuess {
   guess: Guess;
 }
 
-interface Progress {
+export interface Progress {
   day: string;
   guesses: StoredGuess[];
 }
@@ -82,6 +82,15 @@ export function appendGuess(progress: Progress, index: number, guess: Guess): Pr
   return {
     ...progress,
     guesses: [...progress.guesses, { index, guess }].sort((a, b) => a.index - b.index),
+  };
+}
+
+export function progressFromResults(day: string, results: RoundResult[]): Progress {
+  return {
+    day,
+    guesses: results
+      .map((result) => ({ index: result.index, guess: result.guess }))
+      .sort((a, b) => a.index - b.index),
   };
 }
 

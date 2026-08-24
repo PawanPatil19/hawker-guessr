@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 // Report: .gstack/qa-reports/qa-report-hawker-guessr-vercel-app-2026-08-08.md
 
 import type { RoundResult } from "@/domain/types";
-import { buildShareText } from "./share";
+import { buildShareText, share } from "./share";
 
 describe("spoiler-free share card", () => {
   it("includes score context and streak without leaking an answer", () => {
@@ -29,5 +29,9 @@ describe("spoiler-free share card", () => {
     expect(text).toContain("🟩  820 / 5,000");
     expect(text).toContain("3 day streak 🔥");
     expect(text).not.toContain("Secret Centre");
+  });
+
+  it("offers manual copy when browser sharing APIs are unavailable", async () => {
+    expect(await share("share me")).toBe("manual");
   });
 });

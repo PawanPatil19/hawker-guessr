@@ -6,6 +6,12 @@ import { scoreLocation, scorePrice } from "@/domain/scoring";
 import { locationVerdict, priceVerdict } from "@/domain/verdicts";
 import { requireCentre } from "../repository/centres";
 
+const LICENSE_URLS: Record<string, string> = {
+  "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
+  "CC BY 2.5": "https://creativecommons.org/licenses/by/2.5/",
+};
+
 /**
  * Turns a guess into a result. The only place a Question's answer fields are
  * read — everything else in the app sees PublicRound or RoundResult.
@@ -28,7 +34,13 @@ export function scoreRound(
       ? {
           credit: question.imageCredit,
           license: question.imageLicense,
+          licenseUrl: LICENSE_URLS[question.imageLicense] ?? question.imageSourceUrl,
           sourceUrl: question.imageSourceUrl,
+          changes: [
+            "Cropped and resized for gameplay",
+            question.image?.includes("-blurred") ? "faces or plates obscured where visible" : null,
+            question.redactions?.length ? "answer signage obscured in the clue" : null,
+          ].filter(Boolean).join("; ") + ".",
         }
       : undefined;
 

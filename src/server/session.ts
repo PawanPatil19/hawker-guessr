@@ -36,3 +36,20 @@ export async function resolvePlayer(): Promise<{
     setCookie: { name: COOKIE, value: playerId, maxAge: ONE_YEAR },
   };
 }
+
+export function setPlayerCookie(
+  response: Response,
+  cookie: { name: string; value: string; maxAge: number } | undefined,
+): void {
+  if (!cookie || !("cookies" in response)) return;
+  const nextResponse = response as Response & {
+    cookies: { set: (options: Record<string, unknown>) => void };
+  };
+  nextResponse.cookies.set({
+    ...cookie,
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+  });
+}

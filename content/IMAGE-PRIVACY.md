@@ -20,7 +20,7 @@ Reviewed 8 August 2026.
 | `photo-14-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-15-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-16-blurred.jpg` | All visible faces and vehicle plates blurred | Playable |
-| `photo-17-blurred.jpg` | Dining-area replacement; all visible foreground and background faces blurred | Playable |
+| `photo-17-blurred.jpg` | Exterior view matching the authored roof and housing clues; visible vehicle plates blurred | Playable |
 | `photo-18-blurred.jpg` | All visible faces and vehicle plates blurred | Playable |
 | `photo-19-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-20-blurred.jpg` | All visible faces and vehicle plates blurred | Playable |
@@ -29,13 +29,17 @@ Reviewed 8 August 2026.
 | `photo-23-blurred.jpg` | Signed food-centre entrance replacement; all visible faces and vehicle plates blurred | Playable |
 | `photo-24-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-25-blurred.jpg` | Active market entrance replacement; all visible foreground and background faces blurred | Playable |
-| `photo-26-blurred.jpg` | Food-floor replacement; all visible foreground and background faces blurred | Playable |
+| `photo-26-blurred.jpg` | Exterior view matching the authored circular-roof and palm clues; no identifiable faces | Playable |
 | `photo-27-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-28.jpg` | Night exterior; no visible faces or vehicle plates | Playable |
 | `photo-29-blurred.jpg` | All visible faces blurred | Playable |
 | `photo-30-blurred.jpg` | All visible faces blurred | Playable |
 
 Keep original files for source provenance, but only reference privacy-reviewed assets from `questions.json`. Re-review an image whenever it is replaced or recropped.
+
+Answer-bearing signs in playable clue images are obscured at render time using the
+normalized redaction rectangles stored with each question. The unaltered licensed
+source remains available after the reveal through its Wikimedia Commons link.
 
 ## Visual clue quality
 

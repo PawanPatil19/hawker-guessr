@@ -28,11 +28,34 @@ function validate(): void {
     if (!findCentre(q.centreId)) {
       problems.push(`${q.id} → unknown centreId "${q.centreId}"`);
     }
+    if (!["LOCATION", "PRICE"].includes(q.kind)) {
+      problems.push(`${q.id} → invalid question kind`);
+    }
+    if (![1, 2, 3].includes(q.difficulty)) {
+      problems.push(`${q.id} → difficulty must be 1, 2, or 3`);
+    }
+    if (typeof q.verified !== "boolean") {
+      problems.push(`${q.id} → verified must be a boolean`);
+    }
     if (q.kind === "PRICE" && !q.answerPriceCents) {
       problems.push(`${q.id} → PRICE question with no answerPriceCents`);
     }
     if (q.image && (!q.imageCredit || !q.imageSourceUrl || !q.imageLicense)) {
       problems.push(`${q.id} → image question missing attribution or licence`);
+    }
+    for (const redaction of q.redactions ?? []) {
+      const values = [redaction.x, redaction.y, redaction.width, redaction.height];
+      if (
+        values.some((value) => !Number.isFinite(value)) ||
+        redaction.x < 0 ||
+        redaction.y < 0 ||
+        redaction.width <= 0 ||
+        redaction.height <= 0 ||
+        redaction.x + redaction.width > 100 ||
+        redaction.y + redaction.height > 100
+      ) {
+        problems.push(`${q.id} → invalid answer-sign redaction bounds`);
+      }
     }
   }
   if (problems.length) {
@@ -71,5 +94,6 @@ export function toPublicRound(q: Question, index: number): PublicRound {
     image: q.image,
     prompt: q.prompt,
     difficulty: q.difficulty,
+    redactions: q.redactions,
   };
 }

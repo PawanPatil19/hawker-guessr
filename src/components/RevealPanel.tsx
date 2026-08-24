@@ -91,8 +91,13 @@ export function RevealPanel({ result, isLast, image, onNext }: Props) {
           <p className="reveal__credit">
             Photo: {result.imageAttribution.credit} ·{" "}
             <a href={result.imageAttribution.sourceUrl} target="_blank" rel="noreferrer">
+              Source
+            </a>{" "}
+            ·{" "}
+            <a href={result.imageAttribution.licenseUrl} target="_blank" rel="noreferrer">
               {result.imageAttribution.license}
-            </a>
+            </a>{" "}
+            · {result.imageAttribution.changes}
           </p>
         )}
 

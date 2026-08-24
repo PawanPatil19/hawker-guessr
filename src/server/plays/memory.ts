@@ -8,7 +8,7 @@ import type { PlayStore } from "./types";
  * Replace with a Supabase-backed store before the leaderboard ships — see
  * the `plays` table in PRD.md §7.
  */
-class MemoryPlayStore implements PlayStore {
+export class MemoryPlayStore implements PlayStore {
   private readonly rounds = new Map<string, RoundResult[]>();
 
   private key(playerId: string, day: string): string {

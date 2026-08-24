@@ -5,7 +5,9 @@ export default function HomePage() {
   return (
     <main className="shell">
       <Intro />
-      <Game />
+      <div className="game-stage">
+        <Game />
+      </div>
       <footer className="footer">
         Map data © OneMap, Singapore Land Authority.
       </footer>

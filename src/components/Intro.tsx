@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 const STORAGE_KEY = "hg_intro_seen";
@@ -48,6 +48,7 @@ function AnimatedLine({ text, second = false }: { text: string; second?: boolean
 export function Intro() {
   const [visible, setVisible] = useState(false);
   const [leaving, setLeaving] = useState(false);
+  const skip = useRef<HTMLButtonElement>(null);
 
   const dismiss = useCallback(() => {
     if (leaving) return;
@@ -73,11 +74,29 @@ export function Intro() {
     return () => window.clearTimeout(timer);
   }, [dismiss]);
 
+  useEffect(() => {
+    if (!visible) return;
+    const background = document.querySelectorAll<HTMLElement>(".game-stage, .footer");
+    background.forEach((element) => {
+      element.inert = true;
+      element.setAttribute("aria-hidden", "true");
+    });
+    skip.current?.focus();
+    return () => {
+      background.forEach((element) => {
+        element.inert = false;
+        element.removeAttribute("aria-hidden");
+      });
+    };
+  }, [visible]);
+
   if (!visible) return null;
 
   return (
     <section
       className={`intro${leaving ? " intro--leaving" : ""}`}
+      role="dialog"
+      aria-modal="true"
       aria-label="Welcome to Hawker Guessr"
     >
       <div className="intro__copy" aria-live="polite">
@@ -90,7 +109,7 @@ export function Intro() {
         <p className="intro__how">Five photos a day. Closer pins score more.</p>
       </div>
 
-      <button className="intro__enter" type="button" onClick={dismiss}>
+      <button ref={skip} className="intro__enter" type="button" onClick={dismiss}>
         Skip intro <span aria-hidden>↘</span>
       </button>
     </section>
