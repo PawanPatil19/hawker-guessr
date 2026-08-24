@@ -15,22 +15,63 @@ interface Props {
  * change: set `image` in content/questions.json.
  */
 export function ClueCard({ round }: Props) {
-  const [imageFailed, setImageFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const imageFailed = attempt >= 2;
+  const source = round.image
+    ? `${round.image}${attempt ? `?retry=${attempt}` : ""}`
+    : null;
 
   return (
     <section className="clue">
-      {round.image && !imageFailed ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          className="clue__photo"
-          src={round.image}
-          alt="A Singapore hawker centre. Guess where it is."
-          onError={() => setImageFailed(true)}
-        />
+      {source && !imageFailed ? (
+        <div className="clue__photo-frame">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="clue__photo"
+            src={source}
+            alt="A Singapore hawker centre. Guess where it is."
+            onError={() => setAttempt((current) => current + 1)}
+          />
+          {round.redactions && round.redactions.length > 0 && (
+            <svg
+              className="clue__redactions"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <defs>
+                <filter id={`answer-blur-${round.index}`} x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="1.4" />
+                </filter>
+                {round.redactions.map((redaction, index) => (
+                  <clipPath id={`answer-clip-${round.index}-${index}`} key={index}>
+                    <rect {...redaction} />
+                  </clipPath>
+                ))}
+              </defs>
+              {round.redactions.map((_, index) => (
+                <image
+                  key={index}
+                  href={source}
+                  x="0"
+                  y="0"
+                  width="100"
+                  height="100"
+                  preserveAspectRatio="xMidYMid slice"
+                  filter={`url(#answer-blur-${round.index})`}
+                  clipPath={`url(#answer-clip-${round.index}-${index})`}
+                />
+              ))}
+            </svg>
+          )}
+        </div>
       ) : (
-        <p className="clue__error" role="alert">
-          Photo could not load. Refresh to try again.
-        </p>
+        <div className="clue__error" role="alert">
+          <p>Photo could not load.</p>
+          <button className="btn" type="button" onClick={() => setAttempt(0)}>
+            Retry photo
+          </button>
+        </div>
       )}
       <p className="clue__prompt">{round.prompt}</p>
     </section>

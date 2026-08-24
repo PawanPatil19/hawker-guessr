@@ -2,8 +2,14 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-import { questionsForDay, runwayDays } from "./puzzle";
+import { PUZZLE_SCHEDULES, questionsForDay, runwayDays } from "./puzzle";
 import { playableImageQuestions, toPublicRound } from "./repository/questions";
+
+function isoDay(offset: number): string {
+  return new Date(Date.parse("2026-08-01T00:00:00Z") + offset * 86_400_000)
+    .toISOString()
+    .slice(0, 10);
+}
 
 describe("image-only daily puzzle", () => {
   it("has exactly 30 unique playable photos across 30 centres", () => {
@@ -31,13 +37,25 @@ describe("image-only daily puzzle", () => {
     }
   });
 
-  it("randomizes order by day while remaining stable for every player", () => {
-    const augustEighth = questionsForDay("2026-08-08").map((question) => question.id);
-    const sameDayRefresh = questionsForDay("2026-08-08").map((question) => question.id);
-    const followingDay = questionsForDay("2026-08-09").map((question) => question.id);
+  it("keeps every published day stable and content-versioned", () => {
+    const first = questionsForDay("2026-08-24").map((question) => question.id);
+    const refreshed = questionsForDay("2026-08-24").map((question) => question.id);
 
-    expect(sameDayRefresh).toEqual(augustEighth);
-    expect(followingDay).not.toEqual(augustEighth);
+    expect(refreshed).toEqual(first);
+    expect(first).toEqual(PUZZLE_SCHEDULES[0].questionIds.slice(25, 30));
+  });
+
+  it("uses every scheduled question exactly once per runway cycle", () => {
+    const days = Array.from({ length: runwayDays() }, (_, index) =>
+      questionsForDay(isoDay(index)).map((question) => question.id),
+    );
+    const flattened = days.flat();
+
+    expect(new Set(flattened).size).toBe(flattened.length);
+    expect(new Set(flattened)).toEqual(new Set(PUZZLE_SCHEDULES[0].questionIds));
+    for (let index = 1; index < days.length; index += 1) {
+      expect(days[index].some((id) => days[index - 1].includes(id))).toBe(false);
+    }
   });
 
   it("reports the current six-day content runway", () => {

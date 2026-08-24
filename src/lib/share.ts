@@ -54,22 +54,8 @@ export function buildShareText(
     .join("\n");
 }
 
-/** Native share sheet where available, clipboard everywhere else. */
-function legacyCopy(text: string): boolean {
-  if (typeof document === "undefined") return false;
-  const area = document.createElement("textarea");
-  area.value = text;
-  area.setAttribute("readonly", "");
-  area.style.position = "fixed";
-  area.style.opacity = "0";
-  document.body.appendChild(area);
-  area.select();
-  const copied = document.execCommand("copy");
-  area.remove();
-  return copied;
-}
-
-export async function share(text: string): Promise<"shared" | "copied"> {
+/** Native share sheet where available, verified Clipboard API where permitted. */
+export async function share(text: string): Promise<"shared" | "copied" | "manual"> {
   if (typeof navigator !== "undefined" && navigator.share) {
     try {
       await navigator.share({ text });
@@ -86,6 +72,7 @@ export async function share(text: string): Promise<"shared" | "copied"> {
       // Older iOS and embedded browsers may expose but deny Clipboard API.
     }
   }
-  if (legacyCopy(text)) return "copied";
-  throw new Error("Sharing is unavailable in this browser");
+  // execCommand("copy") can report success while copying nothing. Present
+  // selectable text instead of claiming an unverified copy succeeded.
+  return "manual";
 }

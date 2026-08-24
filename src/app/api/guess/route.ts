@@ -6,11 +6,13 @@ import { questionsForDay } from "@/server/puzzle";
 import { scoreRound } from "@/server/services/scoreRound";
 import { parseGuessRequest } from "@/server/validation";
 import {
-  appendGuess,
+  progressFromResults,
   readProgress,
   scoreProgress,
   setProgressCookie,
 } from "@/server/progressCookie";
+import { playStore } from "@/server/plays";
+import { resolvePlayer, setPlayerCookie } from "@/server/session";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +35,11 @@ export async function POST(request: Request) {
     );
   }
   const progress = await readProgress(day);
-  const played = scoreProgress(progress);
+  const player = await resolvePlayer();
+  for (const storedResult of scoreProgress(progress)) {
+    await playStore.append(player.playerId, day, storedResult);
+  }
+  const played = await playStore.get(player.playerId, day);
   const already = played.find(
     (r) => r.index === roundIndex,
   );
@@ -65,7 +71,10 @@ export async function POST(request: Request) {
     );
   }
 
-  const res = NextResponse.json(result);
-  setProgressCookie(res, appendGuess(progress, roundIndex, guess));
+  const canonical = await playStore.append(player.playerId, day, result);
+  const canonicalResults = await playStore.get(player.playerId, day);
+  const res = NextResponse.json(canonical);
+  setPlayerCookie(res, player.setCookie);
+  setProgressCookie(res, progressFromResults(day, canonicalResults));
   return res;
 }

@@ -63,6 +63,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tiong_Bahru_Market,_exterior.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 45, "y": 10, "width": 30, "height": 43 }],
     "prompt": "Which hawker centre?",
     "clues": [
       "Sits inside an art-deco estate of curved white walkways and spiral staircases",
@@ -81,6 +82,7 @@
     "imageCredit": "LN9267",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Changi_Village_Hawker_Centre_10-08-2025(1).jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 13, "y": 25, "width": 68, "height": 38 }],
     "prompt": "Where are you standing?",
     "clues": [
       "The bus terminal outside is the end of the line — literally",
@@ -117,6 +119,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Mile_Food_Centre.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 38, "y": 47, "width": 25, "height": 17 }],
     "prompt": "Which hawker centre?",
     "clues": [
       "A brutalist 1970s slab block on Beach Road, near the Thai supermarket strip",
@@ -366,6 +369,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:People%27s_Park_Food_Centre,_exterior.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 10, "y": 42, "width": 65, "height": 27 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A giant name sign faces New Bridge Road",
@@ -384,6 +388,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Berseh_Food_Centre,_external_view.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 40, "y": 48, "width": 48, "height": 18 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "At the corner of Jalan Besar and Kelantan Lane",
@@ -400,7 +405,7 @@
     "centreId": "north-bridge-road-market-and-food-centre",
     "image": "/hawkers/photo-17-blurred.jpg",
     "imageCredit": "Kbseah",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:North_Bridge_Road_Market,_interior.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:North_Bridge_Road_Market,_exterior.jpg",
     "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre is this?",
     "clues": [
@@ -420,6 +425,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Whampoa_Makan_Place,_exterior.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 45, "y": 34, "width": 40, "height": 29 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A glowing blue name sign crowns the entrance",
@@ -438,6 +444,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zion_Riverside_Food_Centre,_exterior.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 34, "y": 46, "width": 31, "height": 25 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A compact single-storey centre beside Alexandra Canal",
@@ -456,6 +463,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dunman_Food_Centre.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 52, "y": 43, "width": 31, "height": 22 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A small two-storey centre in the Joo Chiat area",
@@ -474,6 +482,7 @@
     "imageCredit": "Orderinchaos",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Geylang_-_Haig_Road_Market_entrance.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 18, "y": 25, "width": 58, "height": 58 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A sculpted illuminated sign marks the entrance",
@@ -510,6 +519,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Havelock_Road_Cooked_Food_Centre_(28490).jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 20, "y": 51, "width": 40, "height": 21 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A low cooked-food centre sits beneath older Block 22",
@@ -517,7 +527,7 @@
       "It is between Tiong Bahru and the Singapore River"
     ],
     "fact": "The centre's low roof and older flats now sit in sharp contrast with the much taller housing built around Havelock Road.",
-    "difficulty": 4,
+    "difficulty": 3,
     "verified": true
   },
   {
@@ -528,6 +538,7 @@
     "imageCredit": "Kbseah",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Holland_Village_Market_and_Food_Centre,_entrance.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 43, "y": 38, "width": 49, "height": 28 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A peaked red-brown roof faces Lorong Mambong",
@@ -562,7 +573,7 @@
     "centreId": "tampines-round-market-and-food-centre",
     "image": "/hawkers/photo-26-blurred.jpg",
     "imageCredit": "Kbseah",
-    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tampines_Round_Market,_food_stalls_(31936).jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tampines_Round_Market,_exterior_view.jpg",
     "imageLicense": "CC BY-SA 4.0",
     "prompt": "Which hawker centre is this?",
     "clues": [
@@ -589,7 +600,7 @@
       "This busy market serves the south end of Yishun"
     ],
     "fact": "Chong Pang is both a market and a neighbourhood identity; locals use the name for the whole cluster of shops around it.",
-    "difficulty": 4,
+    "difficulty": 3,
     "verified": true
   },
   {
@@ -600,6 +611,7 @@
     "imageCredit": "BenTanXiaoMing",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sembawang_Hills_Food_Centre.jpg",
     "imageLicense": "CC BY-SA 4.0",
+    "redactions": [{ "x": 10, "y": 12, "width": 80, "height": 24 }],
     "prompt": "Which hawker centre is this?",
     "clues": [
       "A compact black-and-red frontage with a bright yellow sign",
@@ -643,7 +655,7 @@
       "The market sits along Jurong East Avenue 1"
     ],
     "fact": "Yuhua Village is a heartland centre in Jurong East, several neighbourhood blocks away from the malls around the MRT station.",
-    "difficulty": 4,
+    "difficulty": 3,
     "verified": true
   },
   {

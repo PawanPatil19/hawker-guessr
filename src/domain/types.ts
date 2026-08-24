@@ -43,6 +43,8 @@ export interface Question {
   imageCredit?: string;
   imageSourceUrl?: string;
   imageLicense?: string;
+  /** Normalized image-space rectangles that obscure answer signage. */
+  redactions?: Array<{ x: number; y: number; width: number; height: number }>;
   /** Shown instead of the photo when `image` is null. */
   clues: string[];
   prompt: string;
@@ -66,6 +68,7 @@ export interface PublicRound {
   image: string | null;
   prompt: string;
   difficulty: 1 | 2 | 3;
+  redactions?: Array<{ x: number; y: number; width: number; height: number }>;
 }
 
 export interface PublicPuzzle {
@@ -99,7 +102,9 @@ export interface RoundResult {
   imageAttribution?: {
     credit: string;
     license: string;
+    licenseUrl: string;
     sourceUrl: string;
+    changes: string;
   };
   fact: string;
   verdict: string;
