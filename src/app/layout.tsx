@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
